@@ -1,0 +1,24 @@
+Voice:
+  num_thread: 2
+  packet_size: 512
+  price: 10
+  qos_latency_ms: 5
+  rate: 1
+Browser:
+  num_thread: 2
+  packet_size: 1000
+  price: 20
+  qos_latency_ms: 10
+  rate: 5
+Video_SD:
+  num_thread: 2
+  packet_size: 1000
+  price: 30
+  qos_latency_ms: 10
+  rate: 8
+Video_HD:
+  num_thread: 2
+  packet_size: 1500
+  price: 100
+  qos_latency_ms: 20
+  rate: 15
