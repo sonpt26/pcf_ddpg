@@ -376,7 +376,8 @@ for folder in folders:
             logger.warn("=============NaN action %s. Retry=============", action)
             env.reset()
             break
-        logger.info("state: %s, action: %s", tf_prev_state, action)
+        logger.info("state: %s", tf_prev_state)
+        logger.info("action: %s", action)
         # Recieve state and reward from environment.
         state, reward, done, terminated, _ = env.step(action)
         
@@ -423,10 +424,8 @@ for folder in folders:
         # if done or terminated or count > total_episodes:
         #     break
         retaind_rev = env.get_last_retained_revenue()
-        logger.info("Episode %s. Iteration %s. Loss: %s. Latency: %s. Revenue: %s$. Reward: %s. Retained: %s", 
-                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))
-        logger.info("Episode %s. Iteration %s. Loss: %s. Revenue: %s$. Reward: %s. Retained: %s", 
-                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))
+        logger.info("Episode %s. Iteration %s. Loss %s. Latency %s. Revenue: %s$. Reward: %s. Retained: %s", 
+                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))       
         if (done and retaind_rev > 0.9) or retry > 3:
             break
         
