@@ -89,7 +89,7 @@ class NetworkEnv(gym.Env):
             }
 
         logger.info(
-            "Create environment. Generator setting \n%s. \nProcessor setting \n%s",
+            "Create environment. \nGenerator setting \n%s. \nProcessor setting \n%s",
             json.dumps(self.generator_setting, indent=4),
             json.dumps(self.processor_setting, indent=4),
         )
@@ -395,6 +395,7 @@ class NetworkEnv(gym.Env):
         self.last_revenue = 0
         self.last_throughtput = {}
         self.last_queue_load = {}
+        self.last_retained_revenue = 0
         mean_queue = 0
         count_queue = 0
         for tc, value in self.state_snapshot.items():
@@ -475,23 +476,24 @@ class NetworkEnv(gym.Env):
         reward_revenue = 0
         if max_revenue > 0:
             reward_revenue = total_revenue / max_revenue
+        self.last_retained_revenue = reward_revenue
 
         done = qos_violated == 0 and queue_violated == 0
         terminal = queue_terminate > 0
-        final_reward = (
-            self.reward_factor["qos"] * (np.tanh(np.mean(reward_qos).item()))
-            + self.reward_factor["revenue"] * np.tanh(reward_revenue)
-            + self.reward_factor["queue"] * np.tanh( mean_queue / count_queue)
-        )
         # final_reward = (
-        #     self.reward_factor["qos"] * np.mean(reward_qos).item()
-        #     + self.reward_factor["revenue"] * reward_revenue
-        #     + self.reward_factor["queue"] * mean_queue / count_queue;
+        #     self.reward_factor["qos"] * (np.tanh(np.mean(reward_qos).item()))
+        #     + self.reward_factor["revenue"] * np.tanh(reward_revenue)
+        #     + self.reward_factor["queue"] * np.tanh( mean_queue / count_queue)
         # )
+        final_reward = (
+            self.reward_factor["qos"] * np.mean(reward_qos).item()
+            + self.reward_factor["revenue"] * reward_revenue
+            + self.reward_factor["queue"] * mean_queue / count_queue
+        )
         if done:
-            final_reward = 100 * final_reward
+            final_reward = 10 * final_reward
         else:
-            final_reward = -100 * final_reward
+            final_reward = -10 * final_reward
 
         self.last_revenue = total_revenue
         logger.info(
@@ -550,3 +552,6 @@ class NetworkEnv(gym.Env):
         normalized_data = (data) / (max_val)
         normalized_data = 1 - normalized_data  # Invert the values
         return normalized_data
+
+    def get_last_retained_revenue(self):
+        return self.last_retained_revenue

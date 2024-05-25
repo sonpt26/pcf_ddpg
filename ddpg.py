@@ -47,6 +47,7 @@ from network import NetworkEnv
 import time
 from pathlib import Path
 
+tf.config.run_functions_eagerly(True)
 
 def numpy_representer(dumper, data):
     return dumper.represent_list(data.tolist())
@@ -120,6 +121,12 @@ class Buffer:
         self.action_buffer = np.zeros((self.buffer_capacity, *action_shape))
         self.reward_buffer = np.zeros((self.buffer_capacity, 1))
         self.next_state_buffer = np.zeros((self.buffer_capacity, *state_shape))
+        
+    def set_loss_dict(self, ep_dict):
+        self.loss_dict = ep_dict
+        
+    def get_last_loss(self):
+        return self.last_loss
 
     # Takes (s,a,r,s') obervation tuple as input
     def record(self, obs_tuple):
@@ -146,6 +153,10 @@ class Buffer:
     ):
         # Training and updating Actor & Critic networks.
         # See Pseudo Code.
+        self.last_loss = {
+            "critic_loss": 0,
+            "actor_loss": 0
+        }
         with tf.GradientTape() as tape:
             target_actions = target_actor(next_state_batch, training=True)
             y = reward_batch + gamma * target_critic(
@@ -153,6 +164,10 @@ class Buffer:
             )
             critic_value = critic_model([state_batch, action_batch], training=True)
             critic_loss = keras.ops.mean(keras.ops.square(y - critic_value))
+            closs = critic_loss.numpy()
+            self.loss_dict["critic_loss"].append(closs)
+            self.last_loss["critic_loss"] = closs
+            # logger.info("critic_loss %s", closs)
 
         critic_grad = tape.gradient(critic_loss, critic_model.trainable_variables)
         critic_optimizer.apply_gradients(
@@ -165,6 +180,10 @@ class Buffer:
             # Used `-value` as we want to maximize the value given
             # by the critic for our actions
             actor_loss = -keras.ops.mean(critic_value)
+            aloss = actor_loss.numpy()
+            self.loss_dict["actor_loss"].append(aloss)
+            self.last_loss["actor_loss"] = aloss
+            # logger.info("actor_loss %s", aloss)
 
         actor_grad = tape.gradient(actor_loss, actor_model.trainable_variables)
         actor_optimizer.apply_gradients(
@@ -203,11 +222,12 @@ def update_target(target, original, tau):
 
 
 def get_actor():
+    last_init = keras.initializers.RandomUniform(minval=-0.01, maxval=0.01)
     inputs = Input(shape=state_shape)
     x = Flatten()(inputs)  # Flatten the input if needed
-    x = Dense(32, activation="relu")(x)
-    x = Dense(32, activation="relu")(x)
-    outputs = Dense(action_shape[0], activation="tanh")(x)
+    x = Dense(64, activation="relu")(x)
+    x = Dense(64, activation="relu")(x)
+    outputs = Dense(action_shape[0], activation="tanh", kernel_initializer=last_init)(x)
     model = Model(inputs, outputs)
     return model
 
@@ -217,14 +237,14 @@ def get_critic():
     action_input = Input(shape=action_shape)
 
     state_x = Flatten()(state_input)  # Flatten the state input if needed
-    state_x = Dense(32, activation="relu")(state_x)
+    state_x = Dense(16, activation="relu")(state_x)
     state_x = Dense(32, activation="relu")(state_x)
 
     action_x = Dense(32, activation="relu")(action_input)
 
     concat = Concatenate()([state_x, action_x])
-    x = Dense(32, activation="relu")(concat)
-    x = Dense(32, activation="relu")(x)
+    x = Dense(64, activation="relu")(concat)
+    x = Dense(64, activation="relu")(x)
     outputs = Dense(1, activation="linear")(x)
 
     model = Model([state_input, action_input], outputs)
@@ -282,11 +302,11 @@ critic_optimizer = keras.optimizers.Adam(critic_lr)
 actor_optimizer = keras.optimizers.Adam(actor_lr)
 
 # Discount factor for future rewards
-gamma = 0.99
+gamma = 0.95
 # Used to update target networks
 tau = 0.005
 
-buffer = Buffer(50000, 16)
+buffer = Buffer(50000, 64)
 """
 Now we implement our main training loop, and iterate over episodes.
 We sample actions using `policy()` and train with `learn()` at each time step,
@@ -300,6 +320,7 @@ ep_revenue_list = []
 ep_throughput_list = {}
 ep_queue_load_list = {}
 ep_record = {}
+ep_loss = {}
 
 directory_path = "./setting"
 specific_dir = Path(directory_path)
@@ -332,6 +353,11 @@ for folder in folders:
         "reward": 0,
         "revenue": 0
     }
+    ep_loss[folder] = {
+        "actor_loss": [],
+        "critic_loss": []
+    }
+    buffer.set_loss_dict(ep_loss[folder])
     while True:
         count +=1;
         tf_prev_state = keras.ops.expand_dims(
@@ -383,11 +409,9 @@ for folder in folders:
         if reward > ep_record[folder]["reward"]:
             ep_record[folder]["reward"] = reward
             ep_record[folder]["revenue"] = revenue
-            ep_record[folder]["action"] = action
+            ep_record[folder]["action"] = action.tolist()
             ep_record[folder]["latency"] = latency
-            ep_record[folder]["queue_load"] = queue_load
-        
-        logger.info("Episode %s. Iteration %s. Latency: %s. Revenue: %s$. Reward: %s", folder, count, latency, revenue, reward)
+            ep_record[folder]["queue_load"] = queue_load            
 
         buffer.record((prev_state, action, reward, state))        
         buffer.learn()
@@ -398,10 +422,17 @@ for folder in folders:
         # End this episode when `done` or `truncated` is True
         # if done or terminated or count > total_episodes:
         #     break
-        if reward > 85 or retry > 3:
+        retaind_rev = env.get_last_retained_revenue()
+        logger.info("Episode %s. Iteration %s. Loss: %s. Latency: %s. Revenue: %s$. Reward: %s. Retained: %s", 
+                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))
+        logger.info("Episode %s. Iteration %s. Loss: %s. Revenue: %s$. Reward: %s. Retained: %s", 
+                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))
+        if (done and retaind_rev > 0.9) or retry > 3:
             break
         
         if count > total_episodes:
+            if reward > 0:
+                break
             if reward < 0 :
                 init_action = True
                 count = int(total_episodes/2)
@@ -448,6 +479,16 @@ for folder in folders:
     plt.xlabel("Iteration")
     plt.ylabel("Queue Load")
     plt.savefig(basepath + "/queue_load.png")
+    
+    plt.figure(figsize=(10, 6))
+    for ep, val in ep_loss.items():
+        for typ, los in val.items():
+            plt.plot(los, label=type)
+            
+        plt.legend()
+        plt.xlabel("Iteration")
+        plt.ylabel("Episode " + ep + " loss")
+        plt.savefig(basepath + "/" + ep + "_loss.png")
 
     save_array_data_to_file(basepath + "/tps.yaml", json.dumps(ep_throughput_list))
     save_array_data_to_file(basepath + "/queue.yaml", json.dumps(ep_queue_load_list))
