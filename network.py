@@ -1,3 +1,4 @@
+from itertools import count
 import queue
 import gym
 from gym import spaces
@@ -38,7 +39,7 @@ class NetworkEnv(gym.Env):
         # Parameters
         self.queue_max_utilization = 0.1
         self.scale_factor = 1
-        self.reward_factor = {"qos": 0.5, "revenue": 0.5}
+        self.reward_factor = {"qos": 0.5, "revenue": 0.25, "queue": 0.25}
         self.clear_queue_at_step = clear_queue_step
         if generator_file is not None:
             with open(generator_file, "r") as f:
@@ -394,6 +395,8 @@ class NetworkEnv(gym.Env):
         self.last_revenue = 0
         self.last_throughtput = {}
         self.last_queue_load = {}
+        mean_queue = 0
+        count_queue = 0
         for tc, value in self.state_snapshot.items():
             # [latency, nr_throughput, wf_throughput, nr_queue, wf_queue]
             self.last_throughtput[tc] = {}
@@ -431,13 +434,16 @@ class NetworkEnv(gym.Env):
                     queue_violated += 1
                 tf_val.append(mean_non_zero)
                 self.last_queue_load[tech] = mean_non_zero
+                mean_queue += mean_non_zero
+                count_queue += 1
             state_arr.append(np.array(tf_val))
 
         final_state = np.array(state_arr)
         # print("origin", state)
         # print("sigmoid", self.sigmoid(state))
-        if self.sigmoid_state:
-            final_state = self.sigmoid(final_state)
+        # if self.sigmoid_state:
+        #     final_state = self.sigmoid(final_state)
+        final_state = np.tanh(final_state)
         # maxmimum revenue
         max_rev_tech = max(
             self.processor_setting,
@@ -472,14 +478,16 @@ class NetworkEnv(gym.Env):
 
         done = qos_violated == 0 and queue_violated == 0
         terminal = queue_terminate > 0
-        # final_reward = (
-        #     self.reward_factor["qos"] * self.sigmoid(np.mean(reward_qos).item())
-        #     + self.reward_factor["revenue"] * reward_revenue
-        # )
         final_reward = (
-            self.reward_factor["qos"] * np.mean(reward_qos).item()
-            + self.reward_factor["revenue"] * reward_revenue
+            self.reward_factor["qos"] * (np.tanh(np.mean(reward_qos).item()))
+            + self.reward_factor["revenue"] * np.tanh(reward_revenue)
+            + self.reward_factor["queue"] * np.tanh( mean_queue / count_queue)
         )
+        # final_reward = (
+        #     self.reward_factor["qos"] * np.mean(reward_qos).item()
+        #     + self.reward_factor["revenue"] * reward_revenue
+        #     + self.reward_factor["queue"] * mean_queue / count_queue;
+        # )
         if done:
             final_reward = 100 * final_reward
         else:
@@ -537,3 +545,8 @@ class NetworkEnv(gym.Env):
     def close(self):
         logger.info("Close env. Stop all thread")
         self.stop = True
+        
+    def qos_normalize(data, max_val):        
+        normalized_data = (data) / (max_val)
+        normalized_data = 1 - normalized_data  # Invert the values
+        return normalized_data

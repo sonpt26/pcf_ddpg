@@ -1,6 +1,7 @@
 import os
 import logging
 import logging.config
+from tkinter.messagebox import RETRY
 import yaml
 import numpy as np
 import json
@@ -253,14 +254,14 @@ def policy(state, noise_object):
 """
 
 std_dev = 0.3
-x_initial =  np.random.uniform(0,1, action_shape)
-logger.info("x_inital %s", x_initial)
+# x_initial =  np.random.uniform(0,1, action_shape)
+# logger.info("x_inital %s", x_initial)
 ou_noise = OUActionNoise(
     mean=np.zeros(action_shape), 
     std_deviation=float(std_dev) * np.ones(action_shape),
     # dt=4,
     # theta=2,
-    x_initial=x_initial
+    # x_initial=x_initial
 )
 
 actor_model = get_actor()
@@ -298,6 +299,7 @@ ep_latency_list = {}
 ep_revenue_list = []
 ep_throughput_list = {}
 ep_queue_load_list = {}
+ep_record = {}
 
 directory_path = "./setting"
 specific_dir = Path(directory_path)
@@ -316,7 +318,7 @@ def build_path(base_path, *sub_paths):
     return path
 
 
-logger.info("Folders in directory: %s", directory_path)
+logger.info("Folders in directory %s: %s", directory_path, folders)
 for folder in folders:
     gen_setting = specific_dir / folder / "generator.yaml"
     proc_setting = specific_dir / folder / "processor.yaml"
@@ -324,7 +326,12 @@ for folder in folders:
     prev_state, _ = env.reset()
     logger.info("==================TRAINING EPISODE %s==================", folder)
     count = 0
-    init_action = True;
+    init_action = False;
+    retry = 0
+    ep_record[folder] = {
+        "reward": 0,
+        "revenue": 0
+    }
     while True:
         count +=1;
         tf_prev_state = keras.ops.expand_dims(
@@ -373,6 +380,12 @@ for folder in folders:
             ep_queue_load_list[tech].append(val)
 
         ep_reward_list.append(reward)
+        if reward > ep_record[folder]["reward"]:
+            ep_record[folder]["reward"] = reward
+            ep_record[folder]["revenue"] = revenue
+            ep_record[folder]["action"] = action
+            ep_record[folder]["latency"] = latency
+            ep_record[folder]["queue_load"] = queue_load
         
         logger.info("Episode %s. Iteration %s. Latency: %s. Revenue: %s$. Reward: %s", folder, count, latency, revenue, reward)
 
@@ -383,9 +396,19 @@ for folder in folders:
         update_target(target_critic, critic_model, tau)
 
         # End this episode when `done` or `truncated` is True
-        if done or terminated or count > total_episodes:
+        # if done or terminated or count > total_episodes:
+        #     break
+        if reward > 85 or retry > 3:
             break
-
+        
+        if count > total_episodes:
+            if reward < 0 :
+                init_action = True
+                count = int(total_episodes/2)
+                retry += 1         
+            else:
+                break
+        
         prev_state = state        
 
     time.sleep(2)
@@ -399,8 +422,8 @@ for folder in folders:
     plt.figure(figsize=(10, 6))
     plt.plot(ep_reward_list)
     plt.xlabel("Iteration")
-    plt.ylabel("Avg. Episodic Reward")
-    plt.savefig(basepath + "/avg_reward.png")
+    plt.ylabel("Episodic Reward")
+    plt.savefig(basepath + "/reward.png")
     # plt.show()
 
     plt.figure(figsize=(10, 6))
@@ -410,13 +433,13 @@ for folder in folders:
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Latency")
-    plt.savefig(basepath + "/avg_latency.png")
+    plt.savefig(basepath + "/latency.png")
 
     plt.figure(figsize=(10, 6))
     plt.plot(ep_revenue_list)
     plt.xlabel("Iteration")
     plt.ylabel("Revenue")
-    plt.savefig(basepath + "/avg_revenue.png")
+    plt.savefig(basepath + "/revenue.png")
 
     plt.figure(figsize=(10, 6))
     for tech, val in ep_queue_load_list.items():
@@ -428,6 +451,7 @@ for folder in folders:
 
     save_array_data_to_file(basepath + "/tps.yaml", json.dumps(ep_throughput_list))
     save_array_data_to_file(basepath + "/queue.yaml", json.dumps(ep_queue_load_list))
+    save_array_data_to_file(basepath + "/record.yaml", json.dumps(ep_record))
     save_array_data_to_file(basepath + "/revenue.yaml", ep_revenue_list)
     for tc, val in ep_latency_list.items():
         save_array_data_to_file(basepath + "/latency" + tc + ".yaml", val)

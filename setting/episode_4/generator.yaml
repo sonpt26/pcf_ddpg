@@ -1,9 +1,9 @@
-Voice:
-  num_thread: 2
-  packet_size: 512
-  price: 10
-  qos_latency_ms: 5
-  rate: 1
+# Voice:
+#   num_thread: 2
+#   packet_size: 512
+#   price: 10
+#   qos_latency_ms: 5
+#   rate: 1
 Browser:
   num_thread: 2
   packet_size: 1000
