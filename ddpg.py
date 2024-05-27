@@ -10,6 +10,8 @@ import threading
 import sys
 import argparse
 
+fig_size = (20,6)
+
 # Create work dir
 if os.path.exists("./result"):
     shutil.rmtree("./result")
@@ -222,11 +224,11 @@ def update_target(target, original, tau):
 
 
 def get_actor():
-    last_init = keras.initializers.RandomUniform(minval=-0.01, maxval=0.01)
+    last_init = keras.initializers.RandomUniform(minval=-0.1, maxval=0.1)
     inputs = Input(shape=state_shape)
     x = Flatten()(inputs)  # Flatten the input if needed
-    x = Dense(64, activation="relu")(x)
-    x = Dense(64, activation="relu")(x)
+    x = Dense(256, activation="relu")(x)
+    x = Dense(256, activation="relu")(x)
     outputs = Dense(action_shape[0], activation="tanh", kernel_initializer=last_init)(x)
     model = Model(inputs, outputs)
     return model
@@ -243,8 +245,8 @@ def get_critic():
     action_x = Dense(32, activation="relu")(action_input)
 
     concat = Concatenate()([state_x, action_x])
-    x = Dense(64, activation="relu")(concat)
-    x = Dense(64, activation="relu")(x)
+    x = Dense(256, activation="relu")(concat)
+    x = Dense(256, activation="relu")(x)
     outputs = Dense(1, activation="linear")(x)
 
     model = Model([state_input, action_input], outputs)
@@ -295,7 +297,7 @@ target_actor.set_weights(actor_model.get_weights())
 target_critic.set_weights(critic_model.get_weights())
 
 # Learning rate for actor-critic models
-critic_lr = 0.002
+critic_lr = 0.001
 actor_lr = 0.001
 
 critic_optimizer = keras.optimizers.Adam(critic_lr)
@@ -449,45 +451,43 @@ for folder in folders:
     basepath = str(mypath)
 
     # Episodes versus Avg. Rewards    
-    plt.figure(figsize=(10, 6))
-    plt.plot(ep_reward_list)
+    plt.figure(figsize=fig_size)
+    plt.plot(ep_reward_list, marker='o', linewidth=3)
     plt.xlabel("Iteration")
     plt.ylabel("Episodic Reward")
     plt.savefig(basepath + "/reward.png")
     # plt.show()
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=fig_size)
     for tc, val in ep_latency_list.items():
-        plt.plot(val, label=tc)
+        plt.plot(val, label=tc, marker='o', linewidth=3)
 
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Latency")
     plt.savefig(basepath + "/latency.png")
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(ep_revenue_list)
+    plt.figure(figsize=fig_size)
+    plt.plot(ep_revenue_list, marker='o', linewidth=3)
     plt.xlabel("Iteration")
     plt.ylabel("Revenue")
     plt.savefig(basepath + "/revenue.png")
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=fig_size)
     for tech, val in ep_queue_load_list.items():
-        plt.plot(val, label=tech)
+        plt.plot(val, label=tech, marker='o', linewidth=3)
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Queue Load")
     plt.savefig(basepath + "/queue_load.png")
     
-    plt.figure(figsize=(10, 6))
-    for ep, val in ep_loss.items():
-        for typ, los in val.items():
-            plt.plot(los, label=type)
-            
-        plt.legend()
-        plt.xlabel("Iteration")
-        plt.ylabel("Episode " + ep + " loss")
-        plt.savefig(basepath + "/" + ep + "_loss.png")
+    plt.figure(figsize=fig_size)
+    for typ, los in ep_loss[folder].items():        
+        plt.plot(los, label=typ, marker='o', linewidth=3)            
+    plt.legend()
+    plt.xlabel("Iteration")
+    plt.ylabel(folder + " loss")
+    plt.savefig(basepath + "/" + folder + "_loss.png")
 
     save_array_data_to_file(basepath + "/tps.yaml", json.dumps(ep_throughput_list))
     save_array_data_to_file(basepath + "/queue.yaml", json.dumps(ep_queue_load_list))

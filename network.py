@@ -39,7 +39,7 @@ class NetworkEnv(gym.Env):
         # Parameters
         self.queue_max_utilization = 0.1
         self.scale_factor = 1
-        self.reward_factor = {"qos": 0.5, "revenue": 0.25, "queue": 0.25}
+        self.reward_factor = {"qos": 0.3, "revenue": 0.4, "queue": 0.3}
         self.clear_queue_at_step = clear_queue_step
         if generator_file is not None:
             with open(generator_file, "r") as f:
@@ -181,6 +181,7 @@ class NetworkEnv(gym.Env):
 
     def get_weights(self, traffic_class):
         proprotion_5G = self.action[self.traffic_classes.index(traffic_class)]
+        # weights = [1 - proprotion_5G, proprotion_5G]
         weights = [proprotion_5G, 1 - proprotion_5G]
         return weights
 
