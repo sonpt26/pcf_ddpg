@@ -10,7 +10,8 @@ import threading
 import sys
 import argparse
 
-fig_size = (20,6)
+fig_size = (30,20)
+lw = 0.5
 
 # Create work dir
 if os.path.exists("./result"):
@@ -227,9 +228,9 @@ def get_actor():
     last_init = keras.initializers.RandomUniform(minval=-0.1, maxval=0.1)
     inputs = Input(shape=state_shape)
     x = Flatten()(inputs)  # Flatten the input if needed
-    x = Dense(256, activation="relu")(x)
-    x = Dense(256, activation="relu")(x)
-    outputs = Dense(action_shape[0], activation="tanh", kernel_initializer=last_init)(x)
+    x = Dense(256, activation="tanh")(x)
+    x = Dense(256, activation="tanh")(x)
+    outputs = Dense(action_shape[0], activation="linear", kernel_initializer=last_init)(x)
     model = Model(inputs, outputs)
     return model
 
@@ -239,14 +240,14 @@ def get_critic():
     action_input = Input(shape=action_shape)
 
     state_x = Flatten()(state_input)  # Flatten the state input if needed
-    state_x = Dense(16, activation="relu")(state_x)
-    state_x = Dense(32, activation="relu")(state_x)
+    state_x = Dense(16, activation="tanh")(state_x)
+    state_x = Dense(32, activation="tanh")(state_x)
 
-    action_x = Dense(32, activation="relu")(action_input)
+    action_x = Dense(32, activation="tanh")(action_input)
 
     concat = Concatenate()([state_x, action_x])
-    x = Dense(256, activation="relu")(concat)
-    x = Dense(256, activation="relu")(x)
+    x = Dense(256, activation="tanh")(concat)
+    x = Dense(256, activation="tanh")(x)
     outputs = Dense(1, activation="linear")(x)
 
     model = Model([state_input, action_input], outputs)
@@ -315,14 +316,6 @@ We sample actions using `policy()` and train with `learn()` at each time step,
 along with updating the Target networks at a rate `tau`.
 """
 
-# To store reward history of each episode
-ep_reward_list = []
-ep_latency_list = {}
-ep_revenue_list = []
-ep_throughput_list = {}
-ep_queue_load_list = {}
-ep_record = {}
-ep_loss = {}
 
 directory_path = "./setting"
 specific_dir = Path(directory_path)
@@ -340,9 +333,17 @@ def build_path(base_path, *sub_paths):
         path /= sub_path
     return path
 
-
 logger.info("Folders in directory %s: %s", directory_path, folders)
 for folder in folders:
+    # To store reward history of each episode
+    ep_record = {}
+    ep_loss = {}
+    ep_reward_list = []
+    ep_latency_list = {}
+    ep_revenue_list = []
+    ep_throughput_list = {}
+    ep_queue_load_list = {}    
+
     gen_setting = specific_dir / folder / "generator.yaml"
     proc_setting = specific_dir / folder / "processor.yaml"
     env = NetworkEnv(gen_setting, proc_setting, clear_queue_step)
@@ -351,15 +352,15 @@ for folder in folders:
     count = 0
     init_action = False;
     retry = 0
-    ep_record[folder] = {
+    ep_record = {
         "reward": 0,
         "revenue": 0
     }
-    ep_loss[folder] = {
+    ep_loss = {
         "actor_loss": [],
         "critic_loss": []
     }
-    buffer.set_loss_dict(ep_loss[folder])
+    buffer.set_loss_dict(ep_loss)
     while True:
         count +=1;
         tf_prev_state = keras.ops.expand_dims(
@@ -409,12 +410,12 @@ for folder in folders:
             ep_queue_load_list[tech].append(val)
 
         ep_reward_list.append(reward)
-        if reward > ep_record[folder]["reward"]:
-            ep_record[folder]["reward"] = reward
-            ep_record[folder]["revenue"] = revenue
-            ep_record[folder]["action"] = action.tolist()
-            ep_record[folder]["latency"] = latency
-            ep_record[folder]["queue_load"] = queue_load            
+        if reward > ep_record["reward"]:
+            ep_record["reward"] = reward
+            ep_record["revenue"] = revenue
+            ep_record["action"] = action.tolist()
+            ep_record["latency"] = latency
+            ep_record["queue_load"] = queue_load            
 
         buffer.record((prev_state, action, reward, state))        
         buffer.learn()
@@ -452,7 +453,7 @@ for folder in folders:
 
     # Episodes versus Avg. Rewards    
     plt.figure(figsize=fig_size)
-    plt.plot(ep_reward_list, marker='o', linewidth=3)
+    plt.plot(ep_reward_list, marker='o', linewidth=lw)
     plt.xlabel("Iteration")
     plt.ylabel("Episodic Reward")
     plt.savefig(basepath + "/reward.png")
@@ -460,7 +461,7 @@ for folder in folders:
 
     plt.figure(figsize=fig_size)
     for tc, val in ep_latency_list.items():
-        plt.plot(val, label=tc, marker='o', linewidth=3)
+        plt.plot(val, label=tc, marker='o', linewidth=lw)
 
     plt.legend()
     plt.xlabel("Iteration")
@@ -468,26 +469,26 @@ for folder in folders:
     plt.savefig(basepath + "/latency.png")
 
     plt.figure(figsize=fig_size)
-    plt.plot(ep_revenue_list, marker='o', linewidth=3)
+    plt.plot(ep_revenue_list, marker='o', linewidth=lw)
     plt.xlabel("Iteration")
     plt.ylabel("Revenue")
     plt.savefig(basepath + "/revenue.png")
 
     plt.figure(figsize=fig_size)
     for tech, val in ep_queue_load_list.items():
-        plt.plot(val, label=tech, marker='o', linewidth=3)
+        plt.plot(val, label=tech, marker='o', linewidth=lw)
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Queue Load")
     plt.savefig(basepath + "/queue_load.png")
     
     plt.figure(figsize=fig_size)
-    for typ, los in ep_loss[folder].items():        
-        plt.plot(los, label=typ, marker='o', linewidth=3)            
+    for typ, los in ep_loss.items():        
+        plt.plot(los, label=typ, marker='o', linewidth=lw)            
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel(folder + " loss")
-    plt.savefig(basepath + "/" + folder + "_loss.png")
+    plt.savefig(basepath + "/loss.png")
 
     save_array_data_to_file(basepath + "/tps.yaml", json.dumps(ep_throughput_list))
     save_array_data_to_file(basepath + "/queue.yaml", json.dumps(ep_queue_load_list))
