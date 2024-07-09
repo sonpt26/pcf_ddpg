@@ -10,8 +10,9 @@ import threading
 import sys
 import argparse
 
-fig_size = (30,20)
-lw = 0.5
+
+fig_size = (10, 6)
+lw = 0.8
 
 # Create work dir
 if os.path.exists("./result"):
@@ -50,7 +51,11 @@ from network import NetworkEnv
 import time
 from pathlib import Path
 
+# import tikzplotlib
+
+plt.style.use("ggplot")
 tf.config.run_functions_eagerly(True)
+
 
 def numpy_representer(dumper, data):
     return dumper.represent_list(data.tolist())
@@ -124,10 +129,10 @@ class Buffer:
         self.action_buffer = np.zeros((self.buffer_capacity, *action_shape))
         self.reward_buffer = np.zeros((self.buffer_capacity, 1))
         self.next_state_buffer = np.zeros((self.buffer_capacity, *state_shape))
-        
+
     def set_loss_dict(self, ep_dict):
         self.loss_dict = ep_dict
-        
+
     def get_last_loss(self):
         return self.last_loss
 
@@ -156,10 +161,7 @@ class Buffer:
     ):
         # Training and updating Actor & Critic networks.
         # See Pseudo Code.
-        self.last_loss = {
-            "critic_loss": 0,
-            "actor_loss": 0
-        }
+        self.last_loss = {"critic_loss": 0, "actor_loss": 0}
         with tf.GradientTape() as tape:
             target_actions = target_actor(next_state_batch, training=True)
             y = reward_batch + gamma * target_critic(
@@ -225,12 +227,16 @@ def update_target(target, original, tau):
 
 
 def get_actor():
-    last_init = keras.initializers.RandomUniform(minval=-0.1, maxval=0.1)
+    last_init = keras.initializers.RandomUniform(minval=0, maxval=1)
     inputs = Input(shape=state_shape)
     x = Flatten()(inputs)  # Flatten the input if needed
     x = Dense(256, activation="tanh")(x)
     x = Dense(256, activation="tanh")(x)
-    outputs = Dense(action_shape[0], activation="linear", kernel_initializer=last_init)(x)
+    x = Dense(256, activation="tanh")(x)
+    x = Dense(256, activation="tanh")(x)
+    outputs = Dense(action_shape[0], activation="linear", kernel_initializer=last_init)(
+        x
+    )
     model = Model(inputs, outputs)
     return model
 
@@ -240,10 +246,11 @@ def get_critic():
     action_input = Input(shape=action_shape)
 
     state_x = Flatten()(state_input)  # Flatten the state input if needed
-    state_x = Dense(16, activation="tanh")(state_x)
-    state_x = Dense(32, activation="tanh")(state_x)
-
-    action_x = Dense(32, activation="tanh")(action_input)
+    state_x = Dense(256, activation="tanh")(state_x)
+    state_x = Dense(256, activation="tanh")(state_x)
+    state_x = Dense(256, activation="tanh")(state_x)
+    state_x = Dense(256, activation="tanh")(state_x)
+    action_x = Dense(256, activation="tanh")(action_input)
 
     concat = Concatenate()([state_x, action_x])
     x = Dense(256, activation="tanh")(concat)
@@ -263,6 +270,7 @@ exploration.
 def policy(state, noise_object):
     sampled_actions = keras.ops.squeeze(actor_model(state))
     noise = noise_object()
+    logger.info("sampled_actions. %s. noise %s", sampled_actions, noise)
     # Adding noise to action
     sampled_actions = sampled_actions.numpy() + noise
 
@@ -280,10 +288,10 @@ std_dev = 0.3
 # x_initial =  np.random.uniform(0,1, action_shape)
 # logger.info("x_inital %s", x_initial)
 ou_noise = OUActionNoise(
-    mean=np.zeros(action_shape), 
+    mean=np.zeros(action_shape),
     std_deviation=float(std_dev) * np.ones(action_shape),
-    # dt=4,
-    # theta=2,
+    dt=0.2,
+    # theta=1,
     # x_initial=x_initial
 )
 
@@ -298,18 +306,25 @@ target_actor.set_weights(actor_model.get_weights())
 target_critic.set_weights(critic_model.get_weights())
 
 # Learning rate for actor-critic models
+# critic_lr = 0.001
+# actor_lr = 0.001
+# # Discount factor for future rewards
+# gamma = 0.95
+# # Used to update target networks
+# tau = 0.005
+
 critic_lr = 0.001
 actor_lr = 0.001
-
-critic_optimizer = keras.optimizers.Adam(critic_lr)
-actor_optimizer = keras.optimizers.Adam(actor_lr)
-
 # Discount factor for future rewards
 gamma = 0.95
 # Used to update target networks
 tau = 0.005
 
-buffer = Buffer(50000, 64)
+critic_optimizer = keras.optimizers.Adam(critic_lr)
+actor_optimizer = keras.optimizers.Adam(actor_lr)
+
+
+buffer = Buffer(50000, 16)
 """
 Now we implement our main training loop, and iterate over episodes.
 We sample actions using `policy()` and train with `learn()` at each time step,
@@ -333,6 +348,7 @@ def build_path(base_path, *sub_paths):
         path /= sub_path
     return path
 
+
 logger.info("Folders in directory %s: %s", directory_path, folders)
 for folder in folders:
     # To store reward history of each episode
@@ -342,7 +358,9 @@ for folder in folders:
     ep_latency_list = {}
     ep_revenue_list = []
     ep_throughput_list = {}
-    ep_queue_load_list = {}    
+    ep_queue_load_list = {}
+    ep_action_list = {}
+    traffic_classes = []
 
     gen_setting = specific_dir / folder / "generator.yaml"
     proc_setting = specific_dir / folder / "processor.yaml"
@@ -350,29 +368,23 @@ for folder in folders:
     prev_state, _ = env.reset()
     logger.info("==================TRAINING EPISODE %s==================", folder)
     count = 0
-    init_action = False;
+    init_action = False
     retry = 0
-    ep_record = {
-        "reward": 0,
-        "revenue": 0
-    }
-    ep_loss = {
-        "actor_loss": [],
-        "critic_loss": []
-    }
+    ep_record = {"reward": 0, "revenue": 0}
+    ep_loss = {"actor_loss": [], "critic_loss": []}
     buffer.set_loss_dict(ep_loss)
     while True:
-        count +=1;
+        count += 1
         tf_prev_state = keras.ops.expand_dims(
             keras.ops.convert_to_tensor(prev_state), 0
         )
 
         if init_action:
-            action = np.random.uniform(0,1, action_shape)
+            action = np.random.uniform(1, 1, action_shape)
             init_action = False
         else:
             action = policy(tf_prev_state, ou_noise)
-        
+
         array = np.array(action)
         contains_nan = np.isnan(array).any()
         if contains_nan:
@@ -383,14 +395,14 @@ for folder in folders:
         logger.info("action: %s", action)
         # Recieve state and reward from environment.
         state, reward, done, terminated, _ = env.step(action)
-        
+        retaind_rev = env.get_last_retained_revenue()
+
         latency = env.get_last_step_latency()
         for clas, value in latency.items():
             if clas not in ep_latency_list:
                 ep_latency_list[clas] = []
             ep_latency_list[clas].append(value)
 
-        
         throughput = env.get_last_step_throughput()
         for tc, val in throughput.items():
             if tc not in ep_throughput_list:
@@ -399,9 +411,18 @@ for folder in folders:
                 if tech not in ep_throughput_list[tc]:
                     ep_throughput_list[tc][tech] = []
                 ep_throughput_list[tc][tech].append(tps)
-        
+            if tc not in ep_action_list:
+                traffic_classes.append(tc)
+
+        for i in range(len(traffic_classes)):
+            tcl = traffic_classes[i]
+            val = action[i]
+            if tcl not in ep_action_list:
+                ep_action_list[tcl] = []
+            ep_action_list[tcl].append(val)
+
         revenue = env.get_last_step_revenue()
-        ep_revenue_list.append(revenue)
+        ep_revenue_list.append(retaind_rev)
 
         queue_load = env.get_last_step_queue_load()
         for tech, val in queue_load.items():
@@ -415,9 +436,9 @@ for folder in folders:
             ep_record["revenue"] = revenue
             ep_record["action"] = action.tolist()
             ep_record["latency"] = latency
-            ep_record["queue_load"] = queue_load            
+            ep_record["queue_load"] = queue_load
 
-        buffer.record((prev_state, action, reward, state))        
+        buffer.record((prev_state, action, reward, state))
         buffer.learn()
 
         update_target(target_actor, actor_model, tau)
@@ -426,23 +447,31 @@ for folder in folders:
         # End this episode when `done` or `truncated` is True
         # if done or terminated or count > total_episodes:
         #     break
-        retaind_rev = env.get_last_retained_revenue()
-        logger.info("Episode %s. Iteration %s. Loss %s. Latency %s. Revenue: %s$. Reward: %s. Retained: %s", 
-                    folder, count, buffer.get_last_loss(), latency, revenue, reward, round(retaind_rev, 2))       
-        if (done and retaind_rev > 0.9) or retry > 3:
+
+        logger.info(
+            "Episode %s. Iteration %s. Loss %s. Latency %s. Revenue: %s$. Reward: %s. Retained: %s",
+            folder,
+            count,
+            buffer.get_last_loss(),
+            latency,
+            revenue,
+            reward,
+            round(retaind_rev, 2),
+        )
+        if (done and retaind_rev > 0.99) or retry > 3:
             break
-        
+
         if count > total_episodes:
             if reward > 0:
                 break
-            if reward < 0 :
+            if reward < 0:
                 init_action = True
-                count = int(total_episodes/2)
-                retry += 1         
+                count = int(total_episodes / 2)
+                retry += 1
             else:
                 break
-        
-        prev_state = state        
+
+        prev_state = state
 
     time.sleep(2)
     env.close()
@@ -451,44 +480,92 @@ for folder in folders:
     os.makedirs(mypath, exist_ok=True)
     basepath = str(mypath)
 
-    # Episodes versus Avg. Rewards    
+    # Episodes versus Avg. Rewards
     plt.figure(figsize=fig_size)
-    plt.plot(ep_reward_list, marker='o', linewidth=lw)
+    plt.grid(True)
+    plt.plot(
+        ep_reward_list,
+        # marker="o",
+        linewidth=lw,
+    )
     plt.xlabel("Iteration")
     plt.ylabel("Episodic Reward")
     plt.savefig(basepath + "/reward.png")
+    # tikzplotlib.save(basepath + "/reward.tex")
     # plt.show()
 
     plt.figure(figsize=fig_size)
+    plt.grid(True)
     for tc, val in ep_latency_list.items():
-        plt.plot(val, label=tc, marker='o', linewidth=lw)
+        plt.plot(
+            val,
+            label=tc,
+            # marker="o",
+            linewidth=lw,
+        )
 
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Latency")
     plt.savefig(basepath + "/latency.png")
+    # tikzplotlib.save(basepath + "/latency.tex")
 
     plt.figure(figsize=fig_size)
-    plt.plot(ep_revenue_list, marker='o', linewidth=lw)
+    plt.grid(True)
+    plt.plot(
+        ep_revenue_list,
+        # marker="o",
+        linewidth=lw,
+    )
     plt.xlabel("Iteration")
     plt.ylabel("Revenue")
     plt.savefig(basepath + "/revenue.png")
+    # tikzplotlib.save(basepath + "/revenue.tex")
 
     plt.figure(figsize=fig_size)
+    plt.grid(True)
     for tech, val in ep_queue_load_list.items():
-        plt.plot(val, label=tech, marker='o', linewidth=lw)
+        plt.plot(
+            val,
+            label=tech,
+            # marker="o",
+            linewidth=lw,
+        )
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel("Queue Load")
     plt.savefig(basepath + "/queue_load.png")
-    
+    # tikzplotlib.save(basepath + "/queue_load.tex")
+
     plt.figure(figsize=fig_size)
-    for typ, los in ep_loss.items():        
-        plt.plot(los, label=typ, marker='o', linewidth=lw)            
+    plt.grid(True)
+    for typ, los in ep_loss.items():
+        plt.plot(
+            los,
+            label=typ,
+            # marker="o",
+            linewidth=lw,
+        )
     plt.legend()
     plt.xlabel("Iteration")
     plt.ylabel(folder + " loss")
     plt.savefig(basepath + "/loss.png")
+    # tikzplotlib.save(basepath + "/loss.tex")
+
+    plt.figure(figsize=fig_size)
+    plt.grid(True)
+    for typ, act in ep_action_list.items():
+        plt.plot(
+            act,
+            label=typ,
+            # marker="o",
+            linewidth=lw,
+        )
+    plt.legend()
+    plt.xlabel("Iteration")
+    plt.ylabel(folder + " % offload")
+    plt.savefig(basepath + "/wifi.png")
+    # tikzplotlib.save(basepath + "/tps.tex")
 
     save_array_data_to_file(basepath + "/tps.yaml", json.dumps(ep_throughput_list))
     save_array_data_to_file(basepath + "/queue.yaml", json.dumps(ep_queue_load_list))

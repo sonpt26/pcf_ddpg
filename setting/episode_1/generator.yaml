@@ -10,7 +10,7 @@ Browser:
   price: 10
   qos_latency_ms: 10
   rate: 6
-Video_HD:
+HD_Video:
   num_thread: 5
   packet_size: 1500
   price: 30

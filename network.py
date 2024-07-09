@@ -38,8 +38,8 @@ class NetworkEnv(gym.Env):
         super(NetworkEnv, self).__init__()
         # Parameters
         self.queue_max_utilization = 0.1
-        self.scale_factor = 1
-        self.reward_factor = {"qos": 0.3, "revenue": 0.4, "queue": 0.3}
+        self.scale_factor = 100
+        self.reward_factor = {"qos": 0.5, "revenue": 0.5, "queue": 0.3}
         self.clear_queue_at_step = clear_queue_step
         if generator_file is not None:
             with open(generator_file, "r") as f:
@@ -409,7 +409,7 @@ class NetworkEnv(gym.Env):
             tf_val = [qos_ratio]
             if qos_ratio > 1:
                 qos_violated += 1
-            reward_qos.append(1 / qos_ratio)
+            reward_qos.append(qos_ratio)
             # normalize
             for tech, val in value["throughput"].items():
                 arr = np.array(val)
@@ -443,9 +443,9 @@ class NetworkEnv(gym.Env):
         final_state = np.array(state_arr)
         # print("origin", state)
         # print("sigmoid", self.sigmoid(state))
-        # if self.sigmoid_state:
-        #     final_state = self.sigmoid(final_state)
-        final_state = np.tanh(final_state)
+        if self.sigmoid_state:
+            final_state = self.sigmoid(final_state)
+        # final_state = np.tanh(final_state)
         # maxmimum revenue
         max_rev_tech = max(
             self.processor_setting,
@@ -486,19 +486,26 @@ class NetworkEnv(gym.Env):
         #     + self.reward_factor["revenue"] * np.tanh(reward_revenue)
         #     + self.reward_factor["queue"] * np.tanh( mean_queue / count_queue)
         # )
-        final_reward = (
-            self.reward_factor["qos"] * np.mean(reward_qos).item()
-            + self.reward_factor["revenue"] * reward_revenue
-            + self.reward_factor["queue"] * mean_queue / count_queue
+        a1 = -self.reward_factor["qos"] * np.mean(reward_qos).item()
+        a2 = self.reward_factor["revenue"] * reward_revenue
+        a3 = -self.reward_factor["queue"] * mean_queue / count_queue
+        final_reward = a2
+        logger.info(
+            "reward components. qos: %s revenue: %s queue %s",
+            str(round(a1, 2)),
+            str(round(a2, 2)),
+            str(round(a3, 2)),
         )
+        final_reward = round(final_reward, 4)
         if done:
-            final_reward = 10 * final_reward
+            final_reward = self.last_retained_revenue
         else:
-            final_reward = -10 * final_reward
+            # if qos_violated == len(self.traffic_classes):
+            final_reward = 0 - qos_violated
 
         self.last_revenue = total_revenue
         logger.info(
-            "Max rev: %s, real rev: %s, qos_violated: %s, queue_violated: %s, done: %s, terminated: %s, reward: %s",
+            "Max rev: %s, real rev: %s, qos_violated: %s, queue_violated: %s, done: %s, terminated: %s, reward: %s, retained: %s",
             max_revenue,
             total_revenue,
             qos_violated,
@@ -506,10 +513,12 @@ class NetworkEnv(gym.Env):
             done,
             terminal,
             final_reward,
+            str(round(self.last_retained_revenue, 2)),
         )
         if max_revenue == 0:
             return final_state, 0, False, terminal
         return final_state, final_reward, done, terminal
+        # return final_state, self.last_retained_revenue, done, terminal
 
     def get_last_step_latency(self):
         return self.last_latency
@@ -519,7 +528,7 @@ class NetworkEnv(gym.Env):
 
     def get_last_step_throughput(self):
         return self.last_throughtput
-    
+
     def get_last_step_queue_load(self):
         return self.last_queue_load
 
@@ -548,11 +557,14 @@ class NetworkEnv(gym.Env):
     def close(self):
         logger.info("Close env. Stop all thread")
         self.stop = True
-        
-    def qos_normalize(data, max_val):        
+
+    def qos_normalize(data, max_val):
         normalized_data = (data) / (max_val)
         normalized_data = 1 - normalized_data  # Invert the values
         return normalized_data
 
     def get_last_retained_revenue(self):
         return self.last_retained_revenue
+
+    def get_traffic_classes(self):
+        return self.traffic_classes

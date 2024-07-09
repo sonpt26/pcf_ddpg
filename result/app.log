@@ -1803,3 +1803,546 @@ Processor setting
 2024-07-09 17:00:38,676 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.85$. L: 0.0$. T: 270.75 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 18.54$. L: 0.0$. T: 1977.6 mbps|All. R: 1938.61$. L: 0.0$. T: 2248.35 mbps
 2024-07-09 17:00:38,678 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.28. 
 2024-07-09 17:00:38,680 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:40,687 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 300.24 mbps. drop: 0.0 mbps. latency: 92.92 ms. WF: 0.0 mbps. NR: 300.03 mbps
+2024-07-09 17:00:40,690 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 491.52 mbps. drop: 0.0 mbps. latency: 0.91 ms. WF: 491.52 mbps. NR: 0.0 mbps
+2024-07-09 17:00:40,692 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2228.4 mbps. drop: 0.0 mbps. latency: 93.6 ms. WF: 0.0 mbps. NR: 2229.0 mbps
+2024-07-09 17:00:40,694 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.99$. L: 0.0$. T: 491.93 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 491.93 mbps
+2024-07-09 17:00:40,695 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.76$. L: 0.0$. T: 292.45 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 38.91$. L: 0.0$. T: 2172.6 mbps|All. R: 4066.81$. L: 0.0$. T: 2465.05 mbps
+2024-07-09 17:00:40,695 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.41. 
+2024-07-09 17:00:40,696 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:42,708 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 259.89 mbps. drop: 0.0 mbps. latency: 128.92 ms. WF: 0.0 mbps. NR: 259.69 mbps
+2024-07-09 17:00:42,711 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 435.81 mbps. drop: 0.0 mbps. latency: 0.96 ms. WF: 435.4 mbps. NR: 0.0 mbps
+2024-07-09 17:00:42,713 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1919.4 mbps. drop: 0.0 mbps. latency: 129.39 ms. WF: 0.0 mbps. NR: 1920.0 mbps
+2024-07-09 17:00:42,715 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.35$. L: 0.0$. T: 435.4 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 435.4 mbps
+2024-07-09 17:00:42,717 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.56$. L: 0.0$. T: 256.61 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 56.67$. L: 0.0$. T: 1894.8 mbps|All. R: 5923.44$. L: 0.0$. T: 2151.41 mbps
+2024-07-09 17:00:42,719 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.46. 
+2024-07-09 17:00:42,721 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:44,749 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 271.36 mbps. drop: 0.0 mbps. latency: 162.12 ms. WF: 0.0 mbps. NR: 271.77 mbps
+2024-07-09 17:00:44,750 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 443.19 mbps. drop: 0.0 mbps. latency: 0.99 ms. WF: 444.01 mbps. NR: 0.0 mbps
+2024-07-09 17:00:44,762 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1995.6 mbps. drop: 0.0 mbps. latency: 162.32 ms. WF: 0.0 mbps. NR: 1994.4 mbps
+2024-07-09 17:00:44,764 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.74$. L: 0.0$. T: 446.05 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 446.05 mbps
+2024-07-09 17:00:44,766 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.37$. L: 0.0$. T: 259.89 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 74.46$. L: 0.0$. T: 1896.6 mbps|All. R: 7783.22$. L: 0.0$. T: 2156.49 mbps
+2024-07-09 17:00:44,767 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.69. 
+2024-07-09 17:00:44,768 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:46,784 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 296.96 mbps. drop: 0.0 mbps. latency: 190.12 ms. WF: 0.0 mbps. NR: 296.76 mbps
+2024-07-09 17:00:46,789 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 483.33 mbps. drop: 0.0 mbps. latency: 0.98 ms. WF: 482.92 mbps. NR: 0.0 mbps
+2024-07-09 17:00:46,793 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2172.0 mbps. drop: 0.0 mbps. latency: 190.48 ms. WF: 0.0 mbps. NR: 2173.8 mbps
+2024-07-09 17:00:46,796 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 7.25$. L: 0.0$. T: 481.28 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 481.28 mbps
+2024-07-09 17:00:46,800 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.26$. L: 0.0$. T: 282.42 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 94.04$. L: 0.0$. T: 2089.8 mbps|All. R: 9830.1$. L: 0.0$. T: 2372.22 mbps
+2024-07-09 17:00:46,801 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.9. 
+2024-07-09 17:00:46,803 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:00:46,808 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.89. . Total time: 10.01 s
+2024-07-09 17:00:46,812 MainThread [INFO] my_logger: reward components. qos: -6.33 revenue: 0.47 queue -0.09
+2024-07-09 17:00:46,815 MainThread [INFO] my_logger: Max rev: 105.60732, real rev: 98.35356, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:00:46,972 MainThread [INFO] my_logger: Episode episode_1. Iteration 37. Loss {'critic_loss': 0.0904166, 'actor_loss': -5.6142387}. Latency {'Voice': 126.23321238154449, 'Browser': 0.949670481408974, 'HD_Video': 126.66626412088844}. Revenue: 98.35356$. Reward: -2. Retained: 0.93
+2024-07-09 17:00:46,980 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-12.079355  44.94438  -23.865665], shape=(3,), dtype=float32). noise [-0.78889902 -0.11912593 -0.06972485]
+2024-07-09 17:00:46,981 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.93844248 0.500125   0.64641855]
+  [0.52372393 0.99956157 0.5        0.500125   0.64641855]
+  [0.99822701 0.5        1.         0.500125   0.64641855]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:00:46,982 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:00:46,982 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:00:46,985 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:00:48,819 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 267.06 mbps. drop: 0.0 mbps. latency: 20.25 ms. WF: 0.0 mbps. NR: 266.65 mbps
+2024-07-09 17:00:48,822 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 435.4 mbps. drop: 0.0 mbps. latency: 0.93 ms. WF: 435.0 mbps. NR: 0.0 mbps
+2024-07-09 17:00:48,824 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1971.0 mbps. drop: 0.0 mbps. latency: 20.41 ms. WF: 0.0 mbps. NR: 1969.2 mbps
+2024-07-09 17:00:48,825 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.36$. L: 0.0$. T: 435.0 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 435.0 mbps
+2024-07-09 17:00:48,826 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.82$. L: 0.0$. T: 262.14 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 18.13$. L: 0.0$. T: 1933.8 mbps|All. R: 1894.86$. L: 0.0$. T: 2195.94 mbps
+2024-07-09 17:00:48,827 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.08. 
+2024-07-09 17:00:48,828 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:50,841 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 294.71 mbps. drop: 0.0 mbps. latency: 41.83 ms. WF: 0.0 mbps. NR: 294.71 mbps
+2024-07-09 17:00:50,843 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 482.1 mbps. drop: 0.0 mbps. latency: 0.94 ms. WF: 482.1 mbps. NR: 0.0 mbps
+2024-07-09 17:00:50,846 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2178.0 mbps. drop: 0.0 mbps. latency: 42.0 ms. WF: 0.0 mbps. NR: 2178.0 mbps
+2024-07-09 17:00:50,848 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.87$. L: 0.0$. T: 482.92 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 482.92 mbps
+2024-07-09 17:00:50,848 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.71$. L: 0.0$. T: 284.88 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 37.87$. L: 0.0$. T: 2104.8 mbps|All. R: 3957.69$. L: 0.0$. T: 2389.68 mbps
+2024-07-09 17:00:50,851 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.25. 
+2024-07-09 17:00:50,853 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:52,877 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 230.2 mbps. drop: 0.0 mbps. latency: 75.33 ms. WF: 0.0 mbps. NR: 230.6 mbps
+2024-07-09 17:00:52,882 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 383.8 mbps. drop: 0.0 mbps. latency: 1.04 ms. WF: 383.8 mbps. NR: 0.0 mbps
+2024-07-09 17:00:52,887 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1694.4 mbps. drop: 0.0 mbps. latency: 75.16 ms. WF: 0.0 mbps. NR: 1695.0 mbps
+2024-07-09 17:00:52,888 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.07$. L: 0.0$. T: 383.8 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 383.8 mbps
+2024-07-09 17:00:52,890 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.42$. L: 0.0$. T: 228.35 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 53.6$. L: 0.0$. T: 1678.8 mbps|All. R: 5602.37$. L: 0.0$. T: 1907.15 mbps
+2024-07-09 17:00:52,891 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.3. 
+2024-07-09 17:00:52,893 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:00:54,905 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 254.98 mbps. drop: 0.0 mbps. latency: 88.62 ms. WF: 0.0 mbps. NR: 254.77 mbps
+2024-07-09 17:00:54,911 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 427.62 mbps. drop: 0.0 mbps. latency: 1.04 ms. WF: 427.21 mbps. NR: 0.0 mbps
+2024-07-09 17:00:54,913 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1905.0 mbps. drop: 0.0 mbps. latency: 88.66 ms. WF: 0.0 mbps. NR: 1904.4 mbps
+2024-07-09 17:00:54,915 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.4$. L: 0.0$. T: 426.8 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 426.8 mbps
+2024-07-09 17:00:54,916 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.23$. L: 0.0$. T: 257.43 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 71.7$. L: 0.0$. T: 1930.8 mbps|All. R: 7492.94$. L: 0.0$. T: 2188.23 mbps
+2024-07-09 17:00:54,922 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.23. 
+2024-07-09 17:00:54,925 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:00:56,934 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 297.57 mbps. drop: 0.0 mbps. latency: 97.76 ms. WF: 0.0 mbps. NR: 297.37 mbps
+2024-07-09 17:00:56,936 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 485.79 mbps. drop: 0.0 mbps. latency: 1.02 ms. WF: 486.2 mbps. NR: 0.0 mbps
+2024-07-09 17:00:56,938 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2169.0 mbps. drop: 0.0 mbps. latency: 97.69 ms. WF: 0.0 mbps. NR: 2167.8 mbps
+2024-07-09 17:00:56,939 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 6.92$. L: 0.0$. T: 485.79 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 485.79 mbps
+2024-07-09 17:00:56,940 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.12$. L: 0.0$. T: 285.29 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 91.19$. L: 0.0$. T: 2078.4 mbps|All. R: 9530.59$. L: 0.0$. T: 2363.69 mbps
+2024-07-09 17:00:56,941 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.44. 
+2024-07-09 17:00:56,942 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:00:56,994 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.43. . Total time: 10.01 s
+2024-07-09 17:00:56,996 MainThread [INFO] my_logger: reward components. qos: -3.25 revenue: 0.47 queue -0.04
+2024-07-09 17:00:56,996 MainThread [INFO] my_logger: Max rev: 102.83714, real rev: 95.87650000000001, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:00:57,150 MainThread [INFO] my_logger: Episode episode_1. Iteration 38. Loss {'critic_loss': 0.03513769, 'actor_loss': -5.504324}. Latency {'Voice': 64.75742006200416, 'Browser': 0.9934419816773209, 'HD_Video': 64.78525618251984}. Revenue: 95.87650000000001$. Reward: -2. Retained: 0.93
+2024-07-09 17:00:57,157 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-13.579233  44.50408  -24.228352], shape=(3,), dtype=float32). noise [-0.76207992 -0.01890498  0.05061871]
+2024-07-09 17:00:57,158 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99999991 0.5        0.93315443 0.5        0.5717513 ]
+  [0.52481564 0.99937741 0.5        0.5        0.5717513 ]
+  [0.96228536 0.5        1.         0.5        0.5717513 ]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:00:57,159 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:00:57,160 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:00:57,161 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:00:59,056 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 250.06 mbps. drop: 0.0 mbps. latency: 49.15 ms. WF: 0.0 mbps. NR: 249.65 mbps
+2024-07-09 17:00:59,057 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 415.74 mbps. drop: 0.0 mbps. latency: 0.99 ms. WF: 415.33 mbps. NR: 0.0 mbps
+2024-07-09 17:00:59,060 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1870.2 mbps. drop: 0.0 mbps. latency: 49.26 ms. WF: 0.0 mbps. NR: 1868.4 mbps
+2024-07-09 17:00:59,061 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.3$. L: 0.0$. T: 415.33 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 415.33 mbps
+2024-07-09 17:00:59,062 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.76$. L: 0.0$. T: 242.28 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 16.98$. L: 0.0$. T: 1810.2 mbps|All. R: 1773.34$. L: 0.0$. T: 2052.48 mbps
+2024-07-09 17:00:59,064 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.14. 
+2024-07-09 17:00:59,065 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:01,074 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 293.68 mbps. drop: 0.0 mbps. latency: 53.9 ms. WF: 0.0 mbps. NR: 294.09 mbps
+2024-07-09 17:01:01,077 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 481.69 mbps. drop: 0.0 mbps. latency: 0.96 ms. WF: 481.28 mbps. NR: 0.0 mbps
+2024-07-09 17:01:01,079 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2161.8 mbps. drop: 0.0 mbps. latency: 54.02 ms. WF: 0.0 mbps. NR: 2161.2 mbps
+2024-07-09 17:01:01,080 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.8$. L: 0.0$. T: 481.28 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 481.28 mbps
+2024-07-09 17:01:01,081 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.67$. L: 0.0$. T: 291.64 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 37.12$. L: 0.0$. T: 2148.6 mbps|All. R: 3878.79$. L: 0.0$. T: 2440.24 mbps
+2024-07-09 17:01:01,082 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.16. 
+2024-07-09 17:01:01,083 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:03,093 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 299.42 mbps. drop: 0.0 mbps. latency: 73.29 ms. WF: 0.0 mbps. NR: 299.21 mbps
+2024-07-09 17:01:03,096 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 489.47 mbps. drop: 0.0 mbps. latency: 0.95 ms. WF: 489.47 mbps. NR: 0.0 mbps
+2024-07-09 17:01:03,098 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2213.4 mbps. drop: 0.0 mbps. latency: 73.5 ms. WF: 0.0 mbps. NR: 2212.8 mbps
+2024-07-09 17:01:03,100 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.33$. L: 0.0$. T: 490.29 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 490.29 mbps
+2024-07-09 17:01:03,101 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.57$. L: 0.0$. T: 288.97 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 57.13$. L: 0.0$. T: 2135.4 mbps|All. R: 5970.46$. L: 0.0$. T: 2424.37 mbps
+2024-07-09 17:01:03,101 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.35. 
+2024-07-09 17:01:03,103 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:05,112 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 275.66 mbps. drop: 0.0 mbps. latency: 93.98 ms. WF: 0.0 mbps. NR: 275.66 mbps
+2024-07-09 17:01:05,114 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 455.88 mbps. drop: 0.0 mbps. latency: 0.96 ms. WF: 456.7 mbps. NR: 0.0 mbps
+2024-07-09 17:01:05,116 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2038.8 mbps. drop: 0.0 mbps. latency: 94.19 ms. WF: 0.0 mbps. NR: 2040.0 mbps
+2024-07-09 17:01:05,118 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.76$. L: 0.0$. T: 455.88 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 455.88 mbps
+2024-07-09 17:01:05,118 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.42$. L: 0.0$. T: 271.56 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 75.97$. L: 0.0$. T: 2009.4 mbps|All. R: 7939.14$. L: 0.0$. T: 2280.96 mbps
+2024-07-09 17:01:05,119 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.42. 
+2024-07-09 17:01:05,120 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:07,129 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 281.6 mbps. drop: 0.0 mbps. latency: 114.92 ms. WF: 0.0 mbps. NR: 281.6 mbps
+2024-07-09 17:01:07,132 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 468.17 mbps. drop: 0.0 mbps. latency: 0.97 ms. WF: 467.76 mbps. NR: 0.0 mbps
+2024-07-09 17:01:07,137 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2079.6 mbps. drop: 0.0 mbps. latency: 115.31 ms. WF: 0.0 mbps. NR: 2079.6 mbps
+2024-07-09 17:01:07,139 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 7.22$. L: 0.0$. T: 467.76 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 467.76 mbps
+2024-07-09 17:01:07,141 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.24$. L: 0.0$. T: 262.76 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 94.19$. L: 0.0$. T: 1942.8 mbps|All. R: 9842.63$. L: 0.0$. T: 2205.56 mbps
+2024-07-09 17:01:07,143 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.74. 
+2024-07-09 17:01:07,146 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:07,172 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.73. . Total time: 10.01 s
+2024-07-09 17:01:07,175 MainThread [INFO] my_logger: reward components. qos: -3.87 revenue: 0.47 queue -0.06
+2024-07-09 17:01:07,180 MainThread [INFO] my_logger: Max rev: 105.913595, real rev: 98.676475, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:07,362 MainThread [INFO] my_logger: Episode episode_1. Iteration 39. Loss {'critic_loss': 0.05916484, 'actor_loss': -5.4493966}. Latency {'Voice': 77.04702567404696, 'Browser': 0.9649659409584028, 'HD_Video': 77.25466040468817}. Revenue: 98.676475$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:07,370 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-16.181318  43.115284 -25.98535 ], shape=(3,), dtype=float32). noise [-0.78825732  0.02428928 -0.23486   ]
+2024-07-09 17:01:07,372 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.93787215 0.50004167 0.6040016 ]
+  [0.52410545 0.99954821 0.5        0.50004167 0.6040016 ]
+  [0.97942186 0.5        1.         0.50004167 0.6040016 ]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:07,373 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:07,375 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:07,377 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:01:09,257 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 261.32 mbps. drop: 0.0 mbps. latency: 45.28 ms. WF: 0.0 mbps. NR: 260.92 mbps
+2024-07-09 17:01:09,258 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 455.88 mbps. drop: 0.0 mbps. latency: 0.89 ms. WF: 455.07 mbps. NR: 0.0 mbps
+2024-07-09 17:01:09,261 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1987.2 mbps. drop: 0.0 mbps. latency: 46.17 ms. WF: 0.0 mbps. NR: 1985.4 mbps
+2024-07-09 17:01:09,262 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.42$. L: 0.0$. T: 455.07 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 455.07 mbps
+2024-07-09 17:01:09,264 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.79$. L: 0.0$. T: 251.9 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 17.99$. L: 0.0$. T: 1919.4 mbps|All. R: 1878.16$. L: 0.0$. T: 2171.3 mbps
+2024-07-09 17:01:09,265 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.16. 
+2024-07-09 17:01:09,266 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:01:11,275 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 303.92 mbps. drop: 0.0 mbps. latency: 68.15 ms. WF: 0.0 mbps. NR: 303.92 mbps
+2024-07-09 17:01:11,277 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 493.16 mbps. drop: 0.0 mbps. latency: 0.91 ms. WF: 493.57 mbps. NR: 0.0 mbps
+2024-07-09 17:01:11,280 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2203.8 mbps. drop: 0.0 mbps. latency: 68.15 ms. WF: 0.0 mbps. NR: 2203.8 mbps
+2024-07-09 17:01:11,281 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.97$. L: 0.0$. T: 493.57 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 493.57 mbps
+2024-07-09 17:01:11,282 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.7$. L: 0.0$. T: 293.27 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 37.9$. L: 0.0$. T: 2123.4 mbps|All. R: 3960.49$. L: 0.0$. T: 2416.67 mbps
+2024-07-09 17:01:11,283 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.34. 
+2024-07-09 17:01:11,284 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:01:13,292 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 298.19 mbps. drop: 0.0 mbps. latency: 90.59 ms. WF: 0.0 mbps. NR: 298.6 mbps
+2024-07-09 17:01:13,295 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 491.11 mbps. drop: 0.0 mbps. latency: 0.91 ms. WF: 491.11 mbps. NR: 0.0 mbps
+2024-07-09 17:01:13,298 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2209.2 mbps. drop: 0.0 mbps. latency: 90.58 ms. WF: 0.0 mbps. NR: 2209.2 mbps
+2024-07-09 17:01:13,298 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.5$. L: 0.0$. T: 491.52 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 491.52 mbps
+2024-07-09 17:01:13,300 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.64$. L: 0.0$. T: 301.06 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 58.78$. L: 0.0$. T: 2226.6 mbps|All. R: 6142.01$. L: 0.0$. T: 2527.66 mbps
+2024-07-09 17:01:13,301 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.3. 
+2024-07-09 17:01:13,302 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:15,325 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 264.6 mbps. drop: 0.0 mbps. latency: 101.96 ms. WF: 0.0 mbps. NR: 264.4 mbps
+2024-07-09 17:01:15,329 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 439.5 mbps. drop: 0.0 mbps. latency: 0.94 ms. WF: 439.5 mbps. NR: 0.0 mbps
+2024-07-09 17:01:15,332 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1935.6 mbps. drop: 0.0 mbps. latency: 101.88 ms. WF: 0.0 mbps. NR: 1934.4 mbps
+2024-07-09 17:01:15,336 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.87$. L: 0.0$. T: 439.09 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 439.09 mbps
+2024-07-09 17:01:15,341 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.46$. L: 0.0$. T: 260.92 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 76.74$. L: 0.0$. T: 1916.4 mbps|All. R: 8020.17$. L: 0.0$. T: 2177.32 mbps
+2024-07-09 17:01:15,346 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.35. 
+2024-07-09 17:01:15,348 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:17,360 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 301.26 mbps. drop: 0.0 mbps. latency: 113.79 ms. WF: 0.0 mbps. NR: 301.47 mbps
+2024-07-09 17:01:17,363 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 484.56 mbps. drop: 0.0 mbps. latency: 0.94 ms. WF: 484.56 mbps. NR: 0.0 mbps
+2024-07-09 17:01:17,366 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2197.8 mbps. drop: 0.0 mbps. latency: 113.65 ms. WF: 0.0 mbps. NR: 2198.4 mbps
+2024-07-09 17:01:17,367 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 7.39$. L: 0.0$. T: 484.56 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 484.56 mbps
+2024-07-09 17:01:17,368 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.37$. L: 0.0$. T: 290.2 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 96.58$. L: 0.0$. T: 2116.2 mbps|All. R: 10094.8$. L: 0.0$. T: 2406.4 mbps
+2024-07-09 17:01:17,369 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.54. 
+2024-07-09 17:01:17,370 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:01:17,389 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.53. . Total time: 10.01 s
+2024-07-09 17:01:17,391 MainThread [INFO] my_logger: reward components. qos: -4.21 revenue: 0.47 queue -0.06
+2024-07-09 17:01:17,391 MainThread [INFO] my_logger: Max rev: 108.581745, real rev: 101.17694499999999, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:17,546 MainThread [INFO] my_logger: Episode episode_1. Iteration 40. Loss {'critic_loss': 0.16741353, 'actor_loss': -5.480341}. Latency {'Voice': 83.95370312770635, 'Browser': 0.9204261924310048, 'HD_Video': 84.08640730010708}. Revenue: 101.17694499999999$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:17,553 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-19.10304   41.16699  -28.288162], shape=(3,), dtype=float32). noise [-0.92562554  0.17419772 -0.12441401]
+2024-07-09 17:01:17,554 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.94238879 0.5        0.59162006]
+  [0.52299442 0.99962166 0.5        0.5        0.59162006]
+  [0.98528872 0.5        1.         0.5        0.59162006]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:17,555 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:17,556 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:17,558 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:01:19,478 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 285.49 mbps. drop: 0.0 mbps. latency: 46.9 ms. WF: 0.0 mbps. NR: 285.49 mbps
+2024-07-09 17:01:19,481 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 464.9 mbps. drop: 0.0 mbps. latency: 0.9 ms. WF: 464.9 mbps. NR: 0.0 mbps
+2024-07-09 17:01:19,484 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2096.4 mbps. drop: 0.0 mbps. latency: 47.17 ms. WF: 0.0 mbps. NR: 2094.0 mbps
+2024-07-09 17:01:19,486 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.46$. L: 0.0$. T: 465.72 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 465.72 mbps
+2024-07-09 17:01:19,489 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.87$. L: 0.0$. T: 277.5 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 19.09$. L: 0.0$. T: 2035.8 mbps|All. R: 1995.28$. L: 0.0$. T: 2313.3 mbps
+2024-07-09 17:01:19,490 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.14. 
+2024-07-09 17:01:19,492 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:01:21,502 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 302.49 mbps. drop: 0.0 mbps. latency: 63.56 ms. WF: 0.0 mbps. NR: 302.49 mbps
+2024-07-09 17:01:21,503 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 492.75 mbps. drop: 0.0 mbps. latency: 0.91 ms. WF: 492.34 mbps. NR: 0.0 mbps
+2024-07-09 17:01:21,505 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2215.8 mbps. drop: 0.0 mbps. latency: 63.71 ms. WF: 0.0 mbps. NR: 2215.8 mbps
+2024-07-09 17:01:21,507 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.99$. L: 0.0$. T: 491.52 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 491.52 mbps
+2024-07-09 17:01:21,508 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.78$. L: 0.0$. T: 291.84 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 39.11$. L: 0.0$. T: 2136.0 mbps|All. R: 4088.98$. L: 0.0$. T: 2427.84 mbps
+2024-07-09 17:01:21,509 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.32. 
+2024-07-09 17:01:21,510 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:23,519 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 293.48 mbps. drop: 0.0 mbps. latency: 89.47 ms. WF: 0.0 mbps. NR: 293.27 mbps
+2024-07-09 17:01:23,520 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 480.46 mbps. drop: 0.0 mbps. latency: 0.93 ms. WF: 480.05 mbps. NR: 0.0 mbps
+2024-07-09 17:01:23,525 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2163.6 mbps. drop: 0.0 mbps. latency: 89.73 ms. WF: 0.0 mbps. NR: 2164.8 mbps
+2024-07-09 17:01:23,528 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.5$. L: 0.0$. T: 481.28 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 481.28 mbps
+2024-07-09 17:01:23,529 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.67$. L: 0.0$. T: 285.29 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 58.8$. L: 0.0$. T: 2100.0 mbps|All. R: 6146.88$. L: 0.0$. T: 2385.29 mbps
+2024-07-09 17:01:23,531 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.48. 
+2024-07-09 17:01:23,534 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:01:25,553 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 290.61 mbps. drop: 0.0 mbps. latency: 118.8 ms. WF: 0.0 mbps. NR: 291.23 mbps
+2024-07-09 17:01:25,561 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 480.05 mbps. drop: 0.0 mbps. latency: 0.94 ms. WF: 480.87 mbps. NR: 0.0 mbps
+2024-07-09 17:01:25,563 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2148.6 mbps. drop: 0.0 mbps. latency: 119.07 ms. WF: 0.0 mbps. NR: 2149.8 mbps
+2024-07-09 17:01:25,567 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 6.0$. L: 0.0$. T: 480.05 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 480.05 mbps
+2024-07-09 17:01:25,572 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.57$. L: 0.0$. T: 287.13 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 78.61$. L: 0.0$. T: 2113.2 mbps|All. R: 8217.74$. L: 0.0$. T: 2400.33 mbps
+2024-07-09 17:01:25,574 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.56. 
+2024-07-09 17:01:25,576 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:27,559 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.59. . Total time: 10.0 s
+2024-07-09 17:01:27,562 MainThread [INFO] my_logger: reward components. qos: -4.0 revenue: 0.47 queue -0.06
+2024-07-09 17:01:27,563 MainThread [INFO] my_logger: Max rev: 108.27742, real rev: 100.91614, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:27,720 MainThread [INFO] my_logger: Episode episode_1. Iteration 41. Loss {'critic_loss': 0.0360171, 'actor_loss': -5.546711}. Latency {'Voice': 79.682379296889, 'Browser': 0.9185410246486171, 'HD_Video': 79.9170499247839}. Revenue: 100.91614$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:27,728 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-21.664759  39.507996 -30.235483], shape=(3,), dtype=float32). noise [-0.79584157  0.17794613 -0.14934662]
+2024-07-09 17:01:27,729 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.94554568 0.5        0.60319606]
+  [0.52294739 0.99966264 0.5        0.5        0.60319606]
+  [0.98194039 0.5        1.         0.5        0.60319606]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:27,730 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:27,731 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:27,732 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:01:29,604 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 269.11 mbps. drop: 0.0 mbps. latency: 20.17 ms. WF: 0.0 mbps. NR: 269.11 mbps
+2024-07-09 17:01:29,762 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 484.97 mbps. drop: 0.0 mbps. latency: 0.93 ms. WF: 484.56 mbps. NR: 0.0 mbps
+2024-07-09 17:01:29,765 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2167.2 mbps. drop: 0.0 mbps. latency: 27.02 ms. WF: 0.0 mbps. NR: 2166.0 mbps
+2024-07-09 17:01:29,770 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.51$. L: 0.0$. T: 484.56 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 484.56 mbps
+2024-07-09 17:01:29,773 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.87$. L: 0.0$. T: 278.12 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 19.24$. L: 0.0$. T: 2052.6 mbps|All. R: 2011.22$. L: 0.0$. T: 2330.72 mbps
+2024-07-09 17:01:29,775 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.27. 
+2024-07-09 17:01:29,777 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:31,798 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 306.38 mbps. drop: 0.0 mbps. latency: 90.36 ms. WF: 0.0 mbps. NR: 306.18 mbps
+2024-07-09 17:01:31,800 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 453.43 mbps. drop: 0.0 mbps. latency: 0.95 ms. WF: 453.43 mbps. NR: 0.0 mbps
+2024-07-09 17:01:31,803 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2065.2 mbps. drop: 0.0 mbps. latency: 90.34 ms. WF: 0.0 mbps. NR: 2065.2 mbps
+2024-07-09 17:01:31,805 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.93$. L: 0.0$. T: 453.84 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 453.84 mbps
+2024-07-09 17:01:31,806 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.72$. L: 0.0$. T: 271.77 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 37.84$. L: 0.0$. T: 1984.2 mbps|All. R: 3956.34$. L: 0.0$. T: 2255.97 mbps
+2024-07-09 17:01:31,807 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.45. 
+2024-07-09 17:01:31,808 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:33,817 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 302.69 mbps. drop: 0.0 mbps. latency: 132.69 ms. WF: 0.0 mbps. NR: 302.69 mbps
+2024-07-09 17:01:33,820 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 488.24 mbps. drop: 0.0 mbps. latency: 0.94 ms. WF: 488.65 mbps. NR: 0.0 mbps
+2024-07-09 17:01:33,835 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2232.0 mbps. drop: 0.0 mbps. latency: 132.84 ms. WF: 0.0 mbps. NR: 2231.4 mbps
+2024-07-09 17:01:33,840 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.47$. L: 0.0$. T: 490.7 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 490.7 mbps
+2024-07-09 17:01:33,842 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.64$. L: 0.0$. T: 295.12 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 58.15$. L: 0.0$. T: 2164.8 mbps|All. R: 6078.63$. L: 0.0$. T: 2459.92 mbps
+2024-07-09 17:01:33,844 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.6. 
+2024-07-09 17:01:33,845 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:35,857 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 265.63 mbps. drop: 0.0 mbps. latency: 169.1 ms. WF: 0.0 mbps. NR: 265.42 mbps
+2024-07-09 17:01:35,913 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 439.91 mbps. drop: 0.0 mbps. latency: 0.97 ms. WF: 439.91 mbps. NR: 0.0 mbps
+2024-07-09 17:01:36,013 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2041.8 mbps. drop: 0.0 mbps. latency: 171.01 ms. WF: 0.0 mbps. NR: 2043.6 mbps
+2024-07-09 17:01:36,057 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.9$. L: 0.0$. T: 458.34 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 458.34 mbps
+2024-07-09 17:01:36,062 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.49$. L: 0.0$. T: 270.34 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 76.98$. L: 0.0$. T: 2010.0 mbps|All. R: 8046.92$. L: 0.0$. T: 2280.34 mbps
+2024-07-09 17:01:36,063 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.75. 
+2024-07-09 17:01:36,064 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:37,741 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.8. . Total time: 10.01 s
+2024-07-09 17:01:37,745 MainThread [INFO] my_logger: reward components. qos: -5.19 revenue: 0.47 queue -0.09
+2024-07-09 17:01:37,746 MainThread [INFO] my_logger: Max rev: 99.35218499999999, real rev: 92.580985, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:38,050 MainThread [INFO] my_logger: Episode episode_1. Iteration 42. Loss {'critic_loss': 0.12770078, 'actor_loss': -5.6188803}. Latency {'Voice': 103.08314525518989, 'Browser': 0.9482705292719393, 'HD_Video': 105.30025822722357}. Revenue: 92.580985$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:38,069 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-23.708233  38.35889  -31.562206], shape=(3,), dtype=float32). noise [-0.71158965  0.24619756 -0.30077898]
+2024-07-09 17:01:38,086 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.94204313 0.5        0.63959344]
+  [0.52368901 0.99961594 0.5        0.5        0.63959344]
+  [0.99485726 0.5        1.         0.5        0.63959344]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:38,096 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:38,099 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:38,104 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:01:39,800 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 178.79 mbps. drop: 0.0 mbps. latency: 35.64 ms. WF: 0.0 mbps. NR: 178.59 mbps
+2024-07-09 17:01:39,804 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 303.51 mbps. drop: 0.0 mbps. latency: 1.44 ms. WF: 303.1 mbps. NR: 0.0 mbps
+2024-07-09 17:01:39,806 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1330.2 mbps. drop: 0.0 mbps. latency: 35.41 ms. WF: 0.0 mbps. NR: 1327.8 mbps
+2024-07-09 17:01:39,807 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 0.95$. L: 0.0$. T: 303.1 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 303.1 mbps
+2024-07-09 17:01:39,808 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.54$. L: 0.0$. T: 172.44 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 11.95$. L: 0.0$. T: 1273.8 mbps|All. R: 1248.64$. L: 0.0$. T: 1446.24 mbps
+2024-07-09 17:01:39,810 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.12. 
+2024-07-09 17:01:39,817 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:41,839 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 260.51 mbps. drop: 0.0 mbps. latency: 98.43 ms. WF: 0.0 mbps. NR: 260.51 mbps
+2024-07-09 17:01:41,886 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 432.54 mbps. drop: 0.0 mbps. latency: 1.29 ms. WF: 432.54 mbps. NR: 0.0 mbps
+2024-07-09 17:01:41,898 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1966.2 mbps. drop: 0.0 mbps. latency: 101.27 ms. WF: 0.0 mbps. NR: 1966.8 mbps
+2024-07-09 17:01:41,904 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.31$. L: 0.0$. T: 434.59 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 434.59 mbps
+2024-07-09 17:01:41,905 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.28$. L: 0.0$. T: 237.77 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 28.63$. L: 0.0$. T: 1779.6 mbps|All. R: 2990.75$. L: 0.0$. T: 2017.37 mbps
+2024-07-09 17:01:41,907 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.57. 
+2024-07-09 17:01:41,932 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:43,953 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 236.13 mbps. drop: 0.0 mbps. latency: 186.08 ms. WF: 0.0 mbps. NR: 236.13 mbps
+2024-07-09 17:01:43,960 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 385.43 mbps. drop: 0.0 mbps. latency: 1.34 ms. WF: 385.02 mbps. NR: 0.0 mbps
+2024-07-09 17:01:43,963 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1666.2 mbps. drop: 0.0 mbps. latency: 184.27 ms. WF: 0.0 mbps. NR: 1667.4 mbps
+2024-07-09 17:01:43,964 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 3.5$. L: 0.0$. T: 383.8 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 383.8 mbps
+2024-07-09 17:01:43,965 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.0$. L: 0.0$. T: 229.38 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 44.03$. L: 0.0$. T: 1642.2 mbps|All. R: 4602.56$. L: 0.0$. T: 1871.58 mbps
+2024-07-09 17:01:43,966 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.62. 
+2024-07-09 17:01:43,967 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:01:45,979 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 250.68 mbps. drop: 0.0 mbps. latency: 214.62 ms. WF: 0.0 mbps. NR: 250.47 mbps
+2024-07-09 17:01:45,982 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 421.89 mbps. drop: 0.0 mbps. latency: 1.26 ms. WF: 421.89 mbps. NR: 0.0 mbps
+2024-07-09 17:01:45,984 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1863.0 mbps. drop: 0.0 mbps. latency: 213.56 ms. WF: 0.0 mbps. NR: 1860.6 mbps
+2024-07-09 17:01:45,986 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.82$. L: 0.0$. T: 421.48 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 421.48 mbps
+2024-07-09 17:01:45,988 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.8$. L: 0.0$. T: 256.0 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 61.86$. L: 0.0$. T: 1902.6 mbps|All. R: 6465.68$. L: 0.0$. T: 2158.6 mbps
+2024-07-09 17:01:45,992 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.52. 
+2024-07-09 17:01:45,994 Thread-28 (print_stat) [INFO] my_logger: ==========================================================================================================================================================================
+2024-07-09 17:01:48,012 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 245.56 mbps. drop: 0.0 mbps. latency: 214.58 ms. WF: 0.0 mbps. NR: 246.17 mbps
+2024-07-09 17:01:48,116 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.32. . Total time: 10.01 s
+2024-07-09 17:01:48,174 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 430.9 mbps. drop: 0.0 mbps. latency: 1.23 ms. WF: 431.72 mbps. NR: 0.0 mbps
+2024-07-09 17:01:48,186 MainThread [INFO] my_logger: reward components. qos: -7.38 revenue: 0.47 queue -0.06
+2024-07-09 17:01:48,215 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1889.4 mbps. drop: 0.0 mbps. latency: 214.03 ms. WF: 0.0 mbps. NR: 1892.4 mbps
+2024-07-09 17:01:48,218 MainThread [INFO] my_logger: Max rev: 90.18029, real rev: 84.01069, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:48,220 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 6.17$. L: 0.0$. T: 431.31 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 431.31 mbps
+2024-07-09 17:01:48,232 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.63$. L: 0.0$. T: 265.83 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 80.38$. L: 0.0$. T: 1975.8 mbps|All. R: 8401.07$. L: 0.0$. T: 2241.63 mbps
+2024-07-09 17:01:48,233 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.33. 
+2024-07-09 17:01:48,247 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:48,521 MainThread [INFO] my_logger: Episode episode_1. Iteration 43. Loss {'critic_loss': 0.07462156, 'actor_loss': -5.6008215}. Latency {'Voice': 149.87157156523858, 'Browser': 1.3111231231705702, 'HD_Video': 133.6272691990108}. Revenue: 84.01069$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:48,532 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-25.066961  37.732536 -32.102684], shape=(3,), dtype=float32). noise [-0.87379378  0.06291638 -0.13105912]
+2024-07-09 17:01:48,536 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[1.         0.5        0.90369538 0.50005    0.60611243]
+  [0.5327312  0.99838856 0.5        0.50005    0.60611243]
+  [0.9987475  0.5        0.99999993 0.50005    0.60611243]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:48,538 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:48,542 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:48,544 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:01:50,291 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 195.99 mbps. drop: 0.0 mbps. latency: 25.18 ms. WF: 0.0 mbps. NR: 195.79 mbps
+2024-07-09 17:01:50,293 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 326.04 mbps. drop: 0.0 mbps. latency: 1.19 ms. WF: 325.63 mbps. NR: 0.0 mbps
+2024-07-09 17:01:50,296 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1453.2 mbps. drop: 0.0 mbps. latency: 25.3 ms. WF: 0.0 mbps. NR: 1452.0 mbps
+2024-07-09 17:01:50,297 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.02$. L: 0.0$. T: 326.04 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 326.04 mbps
+2024-07-09 17:01:50,298 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.6$. L: 0.0$. T: 190.46 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 13.2$. L: 0.0$. T: 1408.2 mbps|All. R: 1379.71$. L: 0.0$. T: 1598.66 mbps
+2024-07-09 17:01:50,300 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.1. 
+2024-07-09 17:01:50,300 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:01:52,315 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 252.93 mbps. drop: 0.0 mbps. latency: 38.45 ms. WF: 0.0 mbps. NR: 252.72 mbps
+2024-07-09 17:01:52,333 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 419.43 mbps. drop: 0.0 mbps. latency: 1.14 ms. WF: 419.02 mbps. NR: 0.0 mbps
+2024-07-09 17:01:52,336 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1831.8 mbps. drop: 0.0 mbps. latency: 38.46 ms. WF: 0.0 mbps. NR: 1830.6 mbps
+2024-07-09 17:01:52,342 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.33$. L: 0.0$. T: 419.43 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 419.43 mbps
+2024-07-09 17:01:52,345 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.4$. L: 0.0$. T: 256.0 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 30.5$. L: 0.0$. T: 1845.0 mbps|All. R: 3189.39$. L: 0.0$. T: 2101.0 mbps
+2024-07-09 17:01:52,351 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.08. 
+2024-07-09 17:01:52,358 Thread-28 (print_stat) [INFO] my_logger: =========================================================================================================================================================================
+2024-07-09 17:01:54,371 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 251.08 mbps. drop: 0.0 mbps. latency: 37.21 ms. WF: 0.0 mbps. NR: 251.49 mbps
+2024-07-09 17:01:54,373 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 417.38 mbps. drop: 0.0 mbps. latency: 1.12 ms. WF: 417.79 mbps. NR: 0.0 mbps
+2024-07-09 17:01:54,377 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1838.4 mbps. drop: 0.0 mbps. latency: 37.21 ms. WF: 0.0 mbps. NR: 1839.0 mbps
+2024-07-09 17:01:54,378 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 3.63$. L: 0.0$. T: 417.38 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 417.38 mbps
+2024-07-09 17:01:54,380 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.16$. L: 0.0$. T: 245.56 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 47.43$. L: 0.0$. T: 1805.4 mbps|All. R: 4959.26$. L: 0.0$. T: 2050.96 mbps
+2024-07-09 17:01:54,381 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.15. 
+2024-07-09 17:01:54,383 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:56,394 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 281.8 mbps. drop: 0.0 mbps. latency: 47.6 ms. WF: 0.0 mbps. NR: 281.4 mbps
+2024-07-09 17:01:56,396 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 468.58 mbps. drop: 0.0 mbps. latency: 1.08 ms. WF: 468.17 mbps. NR: 0.0 mbps
+2024-07-09 17:01:56,398 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2086.8 mbps. drop: 0.0 mbps. latency: 47.72 ms. WF: 0.0 mbps. NR: 2086.8 mbps
+2024-07-09 17:01:56,399 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.1$. L: 0.0$. T: 467.76 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 467.76 mbps
+2024-07-09 17:01:56,400 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.04$. L: 0.0$. T: 280.17 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 66.92$. L: 0.0$. T: 2079.0 mbps|All. R: 6995.31$. L: 0.0$. T: 2359.17 mbps
+2024-07-09 17:01:56,400 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.16. 
+2024-07-09 17:01:56,402 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:58,414 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 291.02 mbps. drop: 0.0 mbps. latency: 54.07 ms. WF: 0.0 mbps. NR: 291.43 mbps
+2024-07-09 17:01:58,418 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 477.59 mbps. drop: 0.0 mbps. latency: 1.05 ms. WF: 478.0 mbps. NR: 0.0 mbps
+2024-07-09 17:01:58,421 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2157.0 mbps. drop: 0.0 mbps. latency: 54.22 ms. WF: 0.0 mbps. NR: 2156.4 mbps
+2024-07-09 17:01:58,423 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 6.59$. L: 0.0$. T: 478.0 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 478.0 mbps
+2024-07-09 17:01:58,425 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.94$. L: 0.0$. T: 288.15 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 86.88$. L: 0.0$. T: 2129.4 mbps|All. R: 9081.67$. L: 0.0$. T: 2417.55 mbps
+2024-07-09 17:01:58,429 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.23. 
+2024-07-09 17:01:58,430 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:01:58,549 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.22. . Total time: 10.0 s
+2024-07-09 17:01:58,553 MainThread [INFO] my_logger: reward components. qos: -2.04 revenue: 0.47 queue -0.02
+2024-07-09 17:01:58,557 MainThread [INFO] my_logger: Max rev: 98.37861500000001, real rev: 91.72133500000001, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:01:58,803 MainThread [INFO] my_logger: Episode episode_1. Iteration 44. Loss {'critic_loss': 0.008353546, 'actor_loss': -5.747253}. Latency {'Voice': 40.50193586539969, 'Browser': 1.1163829517427573, 'HD_Video': 40.58154410625148}. Revenue: 91.72133500000001$. Reward: -2. Retained: 0.93
+2024-07-09 17:01:58,813 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-25.701813  37.766773 -31.77707 ], shape=(3,), dtype=float32). noise [-0.97205102  0.02854471 -0.06549728]
+2024-07-09 17:01:58,814 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99995996 0.5        0.9255788  0.500125   0.53921099]
+  [0.52788062 0.99911473 0.5        0.500125   0.53921099]
+  [0.88381635 0.5        0.99999999 0.500125   0.53921099]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:01:58,815 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:01:58,816 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:01:58,818 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:02:00,560 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 186.78 mbps. drop: 0.0 mbps. latency: 18.85 ms. WF: 0.0 mbps. NR: 186.57 mbps
+2024-07-09 17:02:00,564 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 317.44 mbps. drop: 0.0 mbps. latency: 1.3 ms. WF: 316.62 mbps. NR: 0.0 mbps
+2024-07-09 17:02:00,565 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1374.0 mbps. drop: 0.0 mbps. latency: 18.86 ms. WF: 0.0 mbps. NR: 1371.6 mbps
+2024-07-09 17:02:00,567 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 0.99$. L: 0.0$. T: 316.62 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 316.62 mbps
+2024-07-09 17:02:00,568 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.57$. L: 0.0$. T: 182.07 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 12.55$. L: 0.0$. T: 1339.2 mbps|All. R: 1312.4$. L: 0.0$. T: 1521.27 mbps
+2024-07-09 17:02:00,570 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.07. 
+2024-07-09 17:02:00,570 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:02:02,580 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 235.52 mbps. drop: 0.0 mbps. latency: 16.76 ms. WF: 0.0 mbps. NR: 235.52 mbps
+2024-07-09 17:02:02,582 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 394.04 mbps. drop: 0.0 mbps. latency: 1.21 ms. WF: 394.44 mbps. NR: 0.0 mbps
+2024-07-09 17:02:02,584 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1748.4 mbps. drop: 0.0 mbps. latency: 16.86 ms. WF: 0.0 mbps. NR: 1749.6 mbps
+2024-07-09 17:02:02,585 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.22$. L: 0.0$. T: 394.44 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 394.44 mbps
+2024-07-09 17:02:02,586 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.31$. L: 0.0$. T: 238.39 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 29.12$. L: 0.0$. T: 1767.0 mbps|All. R: 3043.45$. L: 0.0$. T: 2005.39 mbps
+2024-07-09 17:02:02,587 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.04. 
+2024-07-09 17:02:02,589 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:04,607 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 248.22 mbps. drop: 0.0 mbps. latency: 15.59 ms. WF: 0.0 mbps. NR: 248.22 mbps
+2024-07-09 17:02:04,610 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 418.61 mbps. drop: 0.0 mbps. latency: 1.16 ms. WF: 418.61 mbps. NR: 0.0 mbps
+2024-07-09 17:02:04,613 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1827.0 mbps. drop: 0.0 mbps. latency: 15.73 ms. WF: 0.0 mbps. NR: 1825.8 mbps
+2024-07-09 17:02:04,614 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 3.53$. L: 0.0$. T: 418.61 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 418.61 mbps
+2024-07-09 17:02:04,616 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.1$. L: 0.0$. T: 250.27 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 46.38$. L: 0.0$. T: 1840.8 mbps|All. R: 4847.41$. L: 0.0$. T: 2091.07 mbps
+2024-07-09 17:02:04,617 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.0. 
+2024-07-09 17:02:04,619 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:02:06,640 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 282.83 mbps. drop: 0.0 mbps. latency: 20.57 ms. WF: 0.0 mbps. NR: 282.62 mbps
+2024-07-09 17:02:06,645 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 470.63 mbps. drop: 0.0 mbps. latency: 1.11 ms. WF: 470.22 mbps. NR: 0.0 mbps
+2024-07-09 17:02:06,648 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2088.0 mbps. drop: 0.0 mbps. latency: 20.72 ms. WF: 0.0 mbps. NR: 2087.4 mbps
+2024-07-09 17:02:06,649 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.0$. L: 0.0$. T: 470.22 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 470.22 mbps
+2024-07-09 17:02:06,649 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.95$. L: 0.0$. T: 272.59 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 65.19$. L: 0.0$. T: 2007.0 mbps|All. R: 6814.16$. L: 0.0$. T: 2279.59 mbps
+2024-07-09 17:02:06,651 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.18. 
+2024-07-09 17:02:06,652 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:08,689 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 268.08 mbps. drop: 0.0 mbps. latency: 33.24 ms. WF: 0.0 mbps. NR: 268.08 mbps
+2024-07-09 17:02:08,694 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 442.37 mbps. drop: 0.0 mbps. latency: 1.09 ms. WF: 442.37 mbps. NR: 0.0 mbps
+2024-07-09 17:02:08,697 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1929.6 mbps. drop: 0.0 mbps. latency: 33.14 ms. WF: 0.0 mbps. NR: 1930.8 mbps
+2024-07-09 17:02:08,699 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 6.38$. L: 0.0$. T: 442.37 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 442.37 mbps
+2024-07-09 17:02:08,700 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.78$. L: 0.0$. T: 267.88 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 83.35$. L: 0.0$. T: 1936.2 mbps|All. R: 8713.06$. L: 0.0$. T: 2204.08 mbps
+2024-07-09 17:02:08,703 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.17. 
+2024-07-09 17:02:08,704 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:08,829 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.21. . Total time: 10.01 s
+2024-07-09 17:02:08,833 MainThread [INFO] my_logger: reward components. qos: -1.07 revenue: 0.47 queue -0.02
+2024-07-09 17:02:08,835 MainThread [INFO] my_logger: Max rev: 94.44143500000001, real rev: 87.98767500000001, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:02:09,032 MainThread [INFO] my_logger: Episode episode_1. Iteration 45. Loss {'critic_loss': 0.009553622, 'actor_loss': -5.8089976}. Latency {'Voice': 21.001335129900433, 'Browser': 1.1717826287487179, 'HD_Video': 21.063084853026663}. Revenue: 87.98767500000001$. Reward: -2. Retained: 0.93
+2024-07-09 17:02:09,041 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-25.68151   38.547733 -30.6112  ], shape=(3,), dtype=float32). noise [-1.0685187  -0.11904392 -0.3661604 ]
+2024-07-09 17:02:09,045 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99478161 0.5        0.91851763 0.500125   0.52842764]
+  [0.52926109 0.99889582 0.5        0.500125   0.52842764]
+  [0.74138014 0.5        0.99999998 0.500125   0.52842764]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:02:09,052 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:02:09,053 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:02:09,054 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:02:10,914 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 242.48 mbps. drop: 0.0 mbps. latency: 37.44 ms. WF: 0.0 mbps. NR: 242.28 mbps
+2024-07-09 17:02:10,918 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 405.09 mbps. drop: 0.0 mbps. latency: 1.01 ms. WF: 404.68 mbps. NR: 0.0 mbps
+2024-07-09 17:02:10,921 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1785.0 mbps. drop: 0.0 mbps. latency: 37.13 ms. WF: 0.0 mbps. NR: 1783.8 mbps
+2024-07-09 17:02:10,924 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.26$. L: 0.0$. T: 404.68 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 404.68 mbps
+2024-07-09 17:02:10,928 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.73$. L: 0.0$. T: 234.5 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 16.22$. L: 0.0$. T: 1730.4 mbps|All. R: 1695.53$. L: 0.0$. T: 1964.9 mbps
+2024-07-09 17:02:10,930 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.13. 
+2024-07-09 17:02:10,932 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:02:12,943 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 283.44 mbps. drop: 0.0 mbps. latency: 42.4 ms. WF: 0.0 mbps. NR: 283.44 mbps
+2024-07-09 17:02:12,944 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 468.58 mbps. drop: 0.0 mbps. latency: 0.99 ms. WF: 468.58 mbps. NR: 0.0 mbps
+2024-07-09 17:02:12,947 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2092.2 mbps. drop: 0.0 mbps. latency: 42.28 ms. WF: 0.0 mbps. NR: 2091.6 mbps
+2024-07-09 17:02:12,948 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.73$. L: 0.0$. T: 468.99 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 468.99 mbps
+2024-07-09 17:02:12,949 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.62$. L: 0.0$. T: 285.08 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 35.9$. L: 0.0$. T: 2099.4 mbps|All. R: 3752.81$. L: 0.0$. T: 2384.48 mbps
+2024-07-09 17:02:12,950 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.11. 
+2024-07-09 17:02:12,951 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:02:14,959 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 291.02 mbps. drop: 0.0 mbps. latency: 54.88 ms. WF: 0.0 mbps. NR: 291.02 mbps
+2024-07-09 17:02:14,963 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 482.92 mbps. drop: 0.0 mbps. latency: 0.97 ms. WF: 482.51 mbps. NR: 0.0 mbps
+2024-07-09 17:02:14,967 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2143.8 mbps. drop: 0.0 mbps. latency: 54.91 ms. WF: 0.0 mbps. NR: 2142.6 mbps
+2024-07-09 17:02:14,968 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.24$. L: 0.0$. T: 482.51 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 482.51 mbps
+2024-07-09 17:02:14,969 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.51$. L: 0.0$. T: 283.65 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 55.45$. L: 0.0$. T: 2085.0 mbps|All. R: 5796.13$. L: 0.0$. T: 2368.65 mbps
+2024-07-09 17:02:14,971 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.24. 
+2024-07-09 17:02:14,974 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:16,984 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 296.96 mbps. drop: 0.0 mbps. latency: 66.64 ms. WF: 0.0 mbps. NR: 296.76 mbps
+2024-07-09 17:02:16,987 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 479.64 mbps. drop: 0.0 mbps. latency: 0.96 ms. WF: 480.05 mbps. NR: 0.0 mbps
+2024-07-09 17:02:16,990 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2193.0 mbps. drop: 0.0 mbps. latency: 66.77 ms. WF: 0.0 mbps. NR: 2194.2 mbps
+2024-07-09 17:02:16,991 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.74$. L: 0.0$. T: 480.05 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 480.05 mbps
+2024-07-09 17:02:16,992 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.42$. L: 0.0$. T: 292.04 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 75.72$. L: 0.0$. T: 2161.8 mbps|All. R: 7914.08$. L: 0.0$. T: 2453.84 mbps
+2024-07-09 17:02:16,993 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.32. 
+2024-07-09 17:02:16,994 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:19,002 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 290.41 mbps. drop: 0.0 mbps. latency: 75.35 ms. WF: 0.0 mbps. NR: 290.41 mbps
+2024-07-09 17:02:19,005 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 479.64 mbps. drop: 0.0 mbps. latency: 0.95 ms. WF: 479.64 mbps. NR: 0.0 mbps
+2024-07-09 17:02:19,009 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2141.4 mbps. drop: 0.0 mbps. latency: 75.44 ms. WF: 0.0 mbps. NR: 2140.8 mbps
+2024-07-09 17:02:19,010 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 7.24$. L: 0.0$. T: 479.64 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 479.64 mbps
+2024-07-09 17:02:19,012 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.35$. L: 0.0$. T: 296.14 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 96.19$. L: 0.0$. T: 2183.4 mbps|All. R: 10053.57$. L: 0.0$. T: 2479.54 mbps
+2024-07-09 17:02:19,013 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.22. 
+2024-07-09 17:02:19,015 Thread-28 (print_stat) [INFO] my_logger: ==============================================================================================================================================================================
+2024-07-09 17:02:19,062 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.21. . Total time: 10.01 s
+2024-07-09 17:02:19,063 MainThread [INFO] my_logger: reward components. qos: -2.78 revenue: 0.47 queue -0.03
+2024-07-09 17:02:19,065 MainThread [INFO] my_logger: Max rev: 108.33982999999999, real rev: 101.06559, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:02:19,217 MainThread [INFO] my_logger: Episode episode_1. Iteration 46. Loss {'critic_loss': 0.062302668, 'actor_loss': -5.841183}. Latency {'Voice': 55.3430764972724, 'Browser': 0.9761967781573949, 'HD_Video': 55.30563221200121}. Revenue: 101.06559$. Reward: -2. Retained: 0.93
+2024-07-09 17:02:19,224 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-25.28982   39.930996 -28.877707], shape=(3,), dtype=float32). noise [-0.79347487 -0.09171982 -0.0956239 ]
+2024-07-09 17:02:19,225 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99999902 0.5        0.94174049 0.500125   0.5509888 ]
+  [0.52438556 0.99955616 0.5        0.500125   0.5509888 ]
+  [0.94077062 0.5        1.         0.500125   0.5509888 ]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:02:19,226 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:02:19,227 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:02:19,228 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:02:21,126 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 264.81 mbps. drop: 0.0 mbps. latency: 40.91 ms. WF: 0.0 mbps. NR: 264.6 mbps
+2024-07-09 17:02:21,127 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 441.96 mbps. drop: 0.0 mbps. latency: 0.93 ms. WF: 441.55 mbps. NR: 0.0 mbps
+2024-07-09 17:02:21,130 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1986.0 mbps. drop: 0.0 mbps. latency: 42.11 ms. WF: 0.0 mbps. NR: 1984.2 mbps
+2024-07-09 17:02:21,131 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.38$. L: 0.0$. T: 441.55 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 441.55 mbps
+2024-07-09 17:02:21,133 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.79$. L: 0.0$. T: 253.75 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 17.8$. L: 0.0$. T: 1897.8 mbps|All. R: 1859.05$. L: 0.0$. T: 2151.55 mbps
+2024-07-09 17:02:21,134 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.2. 
+2024-07-09 17:02:21,135 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:02:23,146 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 238.18 mbps. drop: 0.0 mbps. latency: 44.07 ms. WF: 0.0 mbps. NR: 238.18 mbps
+2024-07-09 17:02:23,148 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 405.5 mbps. drop: 0.0 mbps. latency: 1.02 ms. WF: 405.09 mbps. NR: 0.0 mbps
+2024-07-09 17:02:23,151 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1764.0 mbps. drop: 0.0 mbps. latency: 44.79 ms. WF: 0.0 mbps. NR: 1763.4 mbps
+2024-07-09 17:02:23,152 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.65$. L: 0.0$. T: 405.91 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 405.91 mbps
+2024-07-09 17:02:23,153 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.57$. L: 0.0$. T: 248.83 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 35.09$. L: 0.0$. T: 1845.6 mbps|All. R: 3666.49$. L: 0.0$. T: 2094.43 mbps
+2024-07-09 17:02:23,155 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.01. 
+2024-07-09 17:02:23,156 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:25,166 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 302.08 mbps. drop: 0.0 mbps. latency: 46.07 ms. WF: 0.0 mbps. NR: 302.08 mbps
+2024-07-09 17:02:25,168 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 491.11 mbps. drop: 0.0 mbps. latency: 0.99 ms. WF: 491.52 mbps. NR: 0.0 mbps
+2024-07-09 17:02:25,171 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2230.2 mbps. drop: 0.0 mbps. latency: 46.58 ms. WF: 0.0 mbps. NR: 2230.8 mbps
+2024-07-09 17:02:25,172 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 4.18$. L: 0.0$. T: 491.11 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 491.11 mbps
+2024-07-09 17:02:25,173 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.47$. L: 0.0$. T: 287.33 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 54.97$. L: 0.0$. T: 2120.4 mbps|All. R: 5744.16$. L: 0.0$. T: 2407.73 mbps
+2024-07-09 17:02:25,175 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.27. 
+2024-07-09 17:02:25,176 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:27,187 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 295.12 mbps. drop: 0.0 mbps. latency: 69.29 ms. WF: 0.0 mbps. NR: 295.12 mbps
+2024-07-09 17:02:27,189 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 476.77 mbps. drop: 0.0 mbps. latency: 0.98 ms. WF: 477.18 mbps. NR: 0.0 mbps
+2024-07-09 17:02:27,197 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2163.6 mbps. drop: 0.0 mbps. latency: 69.45 ms. WF: 0.0 mbps. NR: 2165.4 mbps
+2024-07-09 17:02:27,201 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.67$. L: 0.0$. T: 477.18 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 477.18 mbps
+2024-07-09 17:02:27,204 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.37$. L: 0.0$. T: 288.97 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 74.8$. L: 0.0$. T: 2114.4 mbps|All. R: 7816.71$. L: 0.0$. T: 2403.37 mbps
+2024-07-09 17:02:27,205 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.38. 
+2024-07-09 17:02:27,209 Thread-28 (print_stat) [INFO] my_logger: ============================================================================================================================================================================
+2024-07-09 17:02:29,229 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 255.39 mbps. drop: 0.0 mbps. latency: 83.83 ms. WF: 0.0 mbps. NR: 255.18 mbps
+2024-07-09 17:02:29,231 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.28. . Total time: 10.0 s
+2024-07-09 17:02:29,234 MainThread [INFO] my_logger: reward components. qos: -2.81 revenue: 0.47 queue -0.03
+2024-07-09 17:02:29,234 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 428.44 mbps. drop: 0.0 mbps. latency: 0.99 ms. WF: 428.03 mbps. NR: 0.0 mbps
+2024-07-09 17:02:29,235 MainThread [INFO] my_logger: Max rev: 104.17549, real rev: 97.16621, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:02:29,237 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1892.4 mbps. drop: 0.0 mbps. latency: 84.05 ms. WF: 0.0 mbps. NR: 1892.4 mbps
+2024-07-09 17:02:29,238 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 7.01$. L: 0.0$. T: 428.03 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 428.03 mbps
+2024-07-09 17:02:29,240 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 4.18$. L: 0.0$. T: 260.3 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 92.98$. L: 0.0$. T: 1939.8 mbps|All. R: 9716.62$. L: 0.0$. T: 2200.1 mbps
+2024-07-09 17:02:29,241 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.28. 
+2024-07-09 17:02:29,242 Thread-28 (print_stat) [INFO] my_logger: ===========================================================================================================================================================================
+2024-07-09 17:02:29,391 MainThread [INFO] my_logger: Episode episode_1. Iteration 47. Loss {'critic_loss': 0.06792086, 'actor_loss': -5.873907}. Latency {'Voice': 56.83467984234179, 'Browser': 0.9804886331433342, 'HD_Video': 50.7348947450609}. Revenue: 97.16621$. Reward: -2. Retained: 0.93
+2024-07-09 17:02:29,398 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-24.331364  41.71414  -26.460796], shape=(3,), dtype=float32). noise [-0.79588019 -0.32015198 -0.15022879]
+2024-07-09 17:02:29,399 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99999933 0.5        0.93686217 0.50005    0.55655692]
+  [0.5244926  0.99948233 0.5        0.50005    0.55655692]
+  [0.92667795 0.5        1.         0.50005    0.55655692]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:02:29,400 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:02:29,401 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:02:29,402 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:02:31,252 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 264.6 mbps. drop: 0.0 mbps. latency: 15.02 ms. WF: 0.0 mbps. NR: 264.4 mbps
+2024-07-09 17:02:31,258 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 433.36 mbps. drop: 0.0 mbps. latency: 0.95 ms. WF: 432.95 mbps. NR: 0.0 mbps
+2024-07-09 17:02:31,263 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1939.8 mbps. drop: 0.0 mbps. latency: 15.24 ms. WF: 0.0 mbps. NR: 1937.4 mbps
+2024-07-09 17:02:31,264 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.35$. L: 0.0$. T: 433.36 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 433.36 mbps
+2024-07-09 17:02:31,267 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.82$. L: 0.0$. T: 260.92 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 17.88$. L: 0.0$. T: 1907.4 mbps|All. R: 1869.72$. L: 0.0$. T: 2168.32 mbps
+2024-07-09 17:02:31,271 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.05. 
+2024-07-09 17:02:31,272 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:33,307 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 208.08 mbps. drop: 0.0 mbps. latency: 31.33 ms. WF: 0.0 mbps. NR: 208.08 mbps
+2024-07-09 17:02:33,317 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 346.52 mbps. drop: 0.0 mbps. latency: 1.12 ms. WF: 346.11 mbps. NR: 0.0 mbps
+2024-07-09 17:02:33,350 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1551.6 mbps. drop: 0.0 mbps. latency: 31.73 ms. WF: 0.0 mbps. NR: 1552.2 mbps
+2024-07-09 17:02:33,366 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 2.45$. L: 0.0$. T: 349.39 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 349.39 mbps
+2024-07-09 17:02:33,368 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 1.48$. L: 0.0$. T: 214.22 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 32.79$. L: 0.0$. T: 1590.6 mbps|All. R: 3427.86$. L: 0.0$. T: 1804.82 mbps
+2024-07-09 17:02:33,380 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.0. 
+2024-07-09 17:02:33,392 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:35,428 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 246.99 mbps. drop: 0.0 mbps. latency: 29.62 ms. WF: 0.0 mbps. NR: 246.99 mbps
+2024-07-09 17:02:35,430 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 412.06 mbps. drop: 0.0 mbps. latency: 1.13 ms. WF: 412.47 mbps. NR: 0.0 mbps
+2024-07-09 17:02:35,434 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 1809.0 mbps. drop: 0.0 mbps. latency: 30.0 ms. WF: 0.0 mbps. NR: 1809.0 mbps
+2024-07-09 17:02:35,435 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 3.72$. L: 0.0$. T: 409.19 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 409.19 mbps
+2024-07-09 17:02:35,436 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 2.22$. L: 0.0$. T: 235.11 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 49.02$. L: 0.0$. T: 1730.4 mbps|All. R: 5123.58$. L: 0.0$. T: 1965.51 mbps
+2024-07-09 17:02:35,437 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.17. 
+2024-07-09 17:02:35,438 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:37,455 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 277.09 mbps. drop: 0.0 mbps. latency: 47.19 ms. WF: 0.0 mbps. NR: 277.5 mbps
+2024-07-09 17:02:37,457 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 461.21 mbps. drop: 0.0 mbps. latency: 1.1 ms. WF: 461.21 mbps. NR: 0.0 mbps
+2024-07-09 17:02:37,461 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2079.0 mbps. drop: 0.0 mbps. latency: 47.68 ms. WF: 0.0 mbps. NR: 2080.2 mbps
+2024-07-09 17:02:37,462 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 5.17$. L: 0.0$. T: 460.8 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 460.8 mbps
+2024-07-09 17:02:37,466 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 3.07$. L: 0.0$. T: 272.38 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 68.06$. L: 0.0$. T: 2031.0 mbps|All. R: 7112.76$. L: 0.0$. T: 2303.38 mbps
+2024-07-09 17:02:37,468 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.28. 
+2024-07-09 17:02:37,469 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
+2024-07-09 17:02:39,409 MainThread [INFO] my_logger: Finish step. Queue WF: 0.0. NR: 0.42. . Total time: 10.01 s
+2024-07-09 17:02:39,413 MainThread [INFO] my_logger: reward components. qos: -1.56 revenue: 0.47 queue -0.03
+2024-07-09 17:02:39,413 MainThread [INFO] my_logger: Max rev: 97.53988, real rev: 90.91716, qos_violated: 2, queue_violated: 3, done: False, terminated: False, reward: -2, retained: 0.93
+2024-07-09 17:02:39,566 MainThread [INFO] my_logger: Episode episode_1. Iteration 48. Loss {'critic_loss': 0.06734047, 'actor_loss': -5.876067}. Latency {'Voice': 30.792431217925156, 'Browser': 1.0747873082904356, 'HD_Video': 31.16081616667176}. Revenue: 90.91716$. Reward: -2. Retained: 0.93
+2024-07-09 17:02:39,574 MainThread [INFO] my_logger: sampled_actions. tf.Tensor([-22.828516  43.916225 -23.362707], shape=(3,), dtype=float32). noise [-0.67451942 -0.18200158 -0.05970698]
+2024-07-09 17:02:39,575 MainThread [INFO] my_logger: state: tf.Tensor(
+[[[0.99954652 0.5        0.92104101 0.5001     0.54606897]
+  [0.52684385 0.99897946 0.5        0.5001     0.54606897]
+  [0.82607204 0.5        0.99999999 0.5001     0.54606897]]], shape=(1, 3, 5), dtype=float64)
+2024-07-09 17:02:39,576 MainThread [INFO] my_logger: action: [0. 1. 0.]
+2024-07-09 17:02:39,577 MainThread [INFO] my_logger: Queue WF cleared
+2024-07-09 17:02:39,578 MainThread [INFO] my_logger: Queue NR cleared
+2024-07-09 17:02:41,487 Thread-28 (print_stat) [INFO] my_logger: Voice. total: 282.83 mbps. drop: 0.0 mbps. latency: 48.15 ms. WF: 0.0 mbps. NR: 282.42 mbps
+2024-07-09 17:02:41,488 Thread-28 (print_stat) [INFO] my_logger: Browser. total: 457.11 mbps. drop: 0.0 mbps. latency: 0.93 ms. WF: 456.29 mbps. NR: 0.0 mbps
+2024-07-09 17:02:41,490 Thread-28 (print_stat) [INFO] my_logger: HD_Video. total: 2061.0 mbps. drop: 0.0 mbps. latency: 48.22 ms. WF: 0.0 mbps. NR: 2059.2 mbps
+2024-07-09 17:02:41,491 Thread-28 (print_stat) [INFO] my_logger: WF. Voice. R: 0.0$. L: 0.0$. T: 0.0 mbps. Browser. R: 1.43$. L: 0.0$. T: 456.29 mbps. HD_Video. R: 0.0$. L: 0.0$. T: 0.0 mbps|All. R: 0.0$. L: 0.0$. T: 456.29 mbps
+2024-07-09 17:02:41,492 Thread-28 (print_stat) [INFO] my_logger: NR. Voice. R: 0.85$. L: 0.0$. T: 270.54 mbps. Browser. R: 0.0$. L: 0.0$. T: 0.0 mbps. HD_Video. R: 18.51$. L: 0.0$. T: 1974.0 mbps|All. R: 1935.23$. L: 0.0$. T: 2244.54 mbps
+2024-07-09 17:02:41,493 Thread-28 (print_stat) [INFO] my_logger: Queue. WF: 0.0. NR: 0.2. 
+2024-07-09 17:02:41,494 Thread-28 (print_stat) [INFO] my_logger: =============================================================================================================================================================================
