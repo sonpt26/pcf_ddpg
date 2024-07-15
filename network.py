@@ -39,7 +39,7 @@ class NetworkEnv(gym.Env):
         # Parameters
         self.queue_max_utilization = 0.1
         self.scale_factor = 100
-        self.reward_factor = {"qos": 0.5, "revenue": 0.5, "queue": 0.3}
+        self.reward_factor = {"qos": 1, "revenue": 1, "queue": 0.3}
         self.clear_queue_at_step = clear_queue_step
         if generator_file is not None:
             with open(generator_file, "r") as f:
@@ -110,7 +110,7 @@ class NetworkEnv(gym.Env):
         self.observation_space = spaces.Box(
             low=0, high=1, dtype=np.float32, shape=self.state_shape
         )
-        self.sigmoid_state = True
+        self.sigmoid_state = False
         self.stop = False
         self.pause = True
         self.init_accum()
@@ -418,6 +418,7 @@ class NetworkEnv(gym.Env):
                 max_mbps = (
                     self.processor_setting[tech]["num_thread"]
                     * self.processor_setting[tech]["rate"]
+                    * self.scale_factor
                 )
                 if non_zero_elements.size > 0:
                     mean_non_zero = np.nanmean(non_zero_elements)
@@ -461,17 +462,21 @@ class NetworkEnv(gym.Env):
                     val["revenue"].value
                     * self.generator_setting[tc]["packet_size"]
                     * self.generator_setting[tc]["price"]
+                    * self.scale_factor
                     / 8
                     / 1e6
                 )
                 processed_tf[tc] += processed
                 total_revenue += (
-                    processed * self.processor_setting[tech]["revenue_factor"]
+                    processed
+                    * self.processor_setting[tech]["revenue_factor"]
+                    * self.scale_factor
                 )
 
         max_revenue = (
             sum(processed_tf.values())
             * self.processor_setting[max_rev_tech]["revenue_factor"]
+            * self.scale_factor
         )
 
         reward_revenue = 0
@@ -489,19 +494,21 @@ class NetworkEnv(gym.Env):
         a1 = -self.reward_factor["qos"] * np.mean(reward_qos).item()
         a2 = self.reward_factor["revenue"] * reward_revenue
         a3 = -self.reward_factor["queue"] * mean_queue / count_queue
-        final_reward = a2
+        sum_action = np.sum(self.action)
+        final_reward = a2 + 0.01 * a1 - 0.001 * sum_action
         logger.info(
-            "reward components. qos: %s revenue: %s queue %s",
+            "reward components. qos: %s revenue: %s queue: %s cost: %s",
             str(round(a1, 2)),
             str(round(a2, 2)),
             str(round(a3, 2)),
+            str(round(sum_action, 2)),
         )
-        final_reward = round(final_reward, 4)
-        if done:
-            final_reward = self.last_retained_revenue
-        else:
-            # if qos_violated == len(self.traffic_classes):
-            final_reward = 0 - qos_violated
+        # final_reward = round(final_reward, 4)
+        # if done:
+        #     final_reward = self.last_retained_revenue
+        # else:
+        #     # if qos_violated == len(self.traffic_classes):
+        #     final_reward = 0 - qos_violated
 
         self.last_revenue = total_revenue
         logger.info(

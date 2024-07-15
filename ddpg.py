@@ -42,7 +42,7 @@ if args.episode:
     logger.info("Total iteration is %s", total_episodes)
 
 import keras
-from keras.layers import Input, Dense, Concatenate, Flatten
+from keras.layers import Input, Dense, Concatenate, Flatten, BatchNormalization
 from keras.models import Model
 import tensorflow as tf
 import gymnasium as gym
@@ -50,10 +50,11 @@ import matplotlib.pyplot as plt
 from network import NetworkEnv
 import time
 from pathlib import Path
+import scienceplots
 
 # import tikzplotlib
 
-plt.style.use("ggplot")
+plt.style.use(["science", "ieee", "no-latex"])
 tf.config.run_functions_eagerly(True)
 
 
@@ -231,9 +232,9 @@ def get_actor():
     inputs = Input(shape=state_shape)
     x = Flatten()(inputs)  # Flatten the input if needed
     x = Dense(256, activation="tanh")(x)
-    x = Dense(256, activation="tanh")(x)
-    x = Dense(256, activation="tanh")(x)
-    x = Dense(256, activation="tanh")(x)
+    x = Dense(128, activation="tanh")(x)
+    x = Dense(64, activation="tanh")(x)
+    x = Dense(32, activation="tanh")(x)
     outputs = Dense(action_shape[0], activation="linear", kernel_initializer=last_init)(
         x
     )
@@ -247,14 +248,18 @@ def get_critic():
 
     state_x = Flatten()(state_input)  # Flatten the state input if needed
     state_x = Dense(256, activation="tanh")(state_x)
-    state_x = Dense(256, activation="tanh")(state_x)
-    state_x = Dense(256, activation="tanh")(state_x)
-    state_x = Dense(256, activation="tanh")(state_x)
+    state_x = Dense(128, activation="tanh")(state_x)
+    state_x = Dense(64, activation="tanh")(state_x)
+    # state_x = Dense(256, activation="tanh")(state_x)
+    state_x = BatchNormalization()(state_x)
     action_x = Dense(256, activation="tanh")(action_input)
+    action_x = Dense(128, activation="tanh")(action_input)
+    action_x = BatchNormalization()(action_x)
 
     concat = Concatenate()([state_x, action_x])
     x = Dense(256, activation="tanh")(concat)
-    x = Dense(256, activation="tanh")(x)
+    x = Dense(128, activation="tanh")(x)
+    x = BatchNormalization()(x)
     outputs = Dense(1, activation="linear")(x)
 
     model = Model([state_input, action_input], outputs)
@@ -316,15 +321,15 @@ target_critic.set_weights(critic_model.get_weights())
 critic_lr = 0.001
 actor_lr = 0.001
 # Discount factor for future rewards
-gamma = 0.95
+gamma = 0.86
 # Used to update target networks
 tau = 0.005
 
-critic_optimizer = keras.optimizers.Adam(critic_lr)
-actor_optimizer = keras.optimizers.Adam(actor_lr)
+critic_optimizer = keras.optimizers.Adam(critic_lr, weight_decay=0.05)
+actor_optimizer = keras.optimizers.Adam(actor_lr, weight_decay=0.05)
 
 
-buffer = Buffer(50000, 16)
+buffer = Buffer(50000, 4)
 """
 Now we implement our main training loop, and iterate over episodes.
 We sample actions using `policy()` and train with `learn()` at each time step,
@@ -488,7 +493,7 @@ for folder in folders:
         # marker="o",
         linewidth=lw,
     )
-    plt.xlabel("Iteration")
+    plt.xlabel("Episode")
     plt.ylabel("Episodic Reward")
     plt.savefig(basepath + "/reward.png")
     # tikzplotlib.save(basepath + "/reward.tex")
@@ -505,7 +510,7 @@ for folder in folders:
         )
 
     plt.legend()
-    plt.xlabel("Iteration")
+    plt.xlabel("Episode")
     plt.ylabel("Latency")
     plt.savefig(basepath + "/latency.png")
     # tikzplotlib.save(basepath + "/latency.tex")
@@ -517,7 +522,7 @@ for folder in folders:
         # marker="o",
         linewidth=lw,
     )
-    plt.xlabel("Iteration")
+    plt.xlabel("Episode")
     plt.ylabel("Revenue")
     plt.savefig(basepath + "/revenue.png")
     # tikzplotlib.save(basepath + "/revenue.tex")
@@ -532,7 +537,7 @@ for folder in folders:
             linewidth=lw,
         )
     plt.legend()
-    plt.xlabel("Iteration")
+    plt.xlabel("Episode")
     plt.ylabel("Queue Load")
     plt.savefig(basepath + "/queue_load.png")
     # tikzplotlib.save(basepath + "/queue_load.tex")
@@ -547,7 +552,7 @@ for folder in folders:
             linewidth=lw,
         )
     plt.legend()
-    plt.xlabel("Iteration")
+    plt.xlabel("Episode")
     plt.ylabel(folder + " loss")
     plt.savefig(basepath + "/loss.png")
     # tikzplotlib.save(basepath + "/loss.tex")
@@ -562,8 +567,8 @@ for folder in folders:
             linewidth=lw,
         )
     plt.legend()
-    plt.xlabel("Iteration")
-    plt.ylabel(folder + " % offload")
+    plt.xlabel("Episode")
+    plt.ylabel("% offload")
     plt.savefig(basepath + "/wifi.png")
     # tikzplotlib.save(basepath + "/tps.tex")
 
