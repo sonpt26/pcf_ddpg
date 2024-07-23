@@ -3,9 +3,13 @@ import numpy as np
 import scienceplots
 import random
 import h5py
+from matplotlib.lines import Line2D
 
 plt.style.use(["science", "ieee", "no-latex"])
-plt.rcParams.update({"font.size": 18, "legend.loc": 1})
+plt.rcParams.update(
+    {"font.size": 18, "legend.loc": 1, "axes.xmargin": 0, "axes.ymargin": 0}
+)
+plt.margins(x=0, y=0)
 
 
 # Save array to HDF5 file
@@ -56,7 +60,7 @@ def increasing_noise(start_value, end_value, num_steps, noise_level):
 
 max_step = 50
 episodes = np.arange(1, max_step + 1)
-rerun = True
+rerun = False
 if rerun:
     latency_drl = [1, 0.82]
     fixed_drl = len(latency_drl)
@@ -90,79 +94,114 @@ print("DRL", np.mean(latency_drl[:31]))
 print("PD5", np.mean(latency_pda5[:31]))
 print("PD15", np.mean(latency_pda20[:31]))
 
-# Create the plot
-plt.figure(figsize=(10, 6))
-plt.plot(episodes, latency_drl, label="DRL", linewidth=3.0)
-plt.plot(episodes, latency_pda5, label="PDA-5", linewidth=3.0)
-plt.plot(episodes, latency_pda20, label="PDA-15", linewidth=3.0)
-plt.xlabel("Steps")
-plt.ylabel("Retained revenue")
-plt.axvline(x=32, color="g", label="Stable", linewidth=1.0)
-plt.axvline(x=12, color="g", linewidth=1.0)
-plt.axvline(x=2, color="g", linewidth=1.0)
-plt.text(
-    32,
-    0.6832,
-    f"32",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
-)
-plt.text(
-    12,
-    0.6832,
-    f"12",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
-)
-plt.text(
-    2,
-    0.6832,
-    f"2",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
-)
 
+def plot_intersect(x_intersect, y_intersect, color, top=False):
+    pos = "bottom"
+    if top:
+        pos = "top"
+
+    vertical_line = Line2D(
+        [x_intersect, x_intersect], [y_intersect, 0.7], color="gray", linestyle="--"
+    )
+    horizontal_line = Line2D(
+        [x_intersect, 0.7], [y_intersect, y_intersect], color="gray", linestyle="--"
+    )
+    plt.plot(x_intersect, y_intersect, color)
+    plt.gca().add_line(vertical_line)
+    plt.gca().add_line(horizontal_line)
+    plt.text(
+        x_intersect,
+        y_intersect,
+        f"({x_intersect:.0f}, {y_intersect:.2f})",
+        fontsize=15,
+        ha="left",
+        va=pos,
+        color="gray",
+    )
+
+
+# Create the plot
 l20 = round(latency_pda20[11], 3)
 l5 = round(latency_pda5[31], 3)
 ldrl = round(latency_drl[1], 3)
-plt.axhline(y=l20, color="g", linewidth=1.0)
-plt.axhline(y=l5, color="g", linewidth=1.0)
-plt.axhline(y=ldrl, color="g", linewidth=1.0)
-plt.text(
-    55,
-    l20,
-    f"{l20}",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
+plt.figure(figsize=(10, 6))
+plt.plot(episodes, latency_drl, label="DRL", linewidth=2.0, linestyle="-", color="r")
+plt.plot(episodes, latency_pda5, label="PDA-5", linewidth=2.0, linestyle="-", color="g")
+plt.plot(
+    episodes, latency_pda20, label="PDA-15", linewidth=2.0, linestyle="-", color="b"
 )
+plt.xlabel("Steps")
+plt.ylabel("Retained revenue")
+# plt.axvline(x=32, color="g", label="Stable", linewidth=1.0)
+# plt.axvline(x=12, color="g", linewidth=1.0)
+# plt.axvline(x=2, color="g", linewidth=1.0)
+ax = plt.gca()
+xticks = ax.xaxis.get_major_ticks()
+xticks[0].label1.set_visible(False)
+plot_intersect(32, l5, "go")
+plot_intersect(12, l20, "bo")
+plot_intersect(2, ldrl, "ro", True)
+# plt.text(
+#     32,
+#     0.6832,
+#     f"32",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
+# plt.text(
+#     12,
+#     0.6832,
+#     f"12",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
+# plt.text(
+#     2,
+#     0.6832,
+#     f"2",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
 
-plt.text(
-    55,
-    l5,
-    f"{round(l5,2)}",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
-)
 
-plt.text(
-    55,
-    ldrl,
-    f"{ldrl}",
-    horizontalalignment="center",
-    verticalalignment="center",
-    rotation=0,
-    fontsize=18,
-)
+# plt.axhline(y=l20, color="g", linewidth=1.0)
+# plt.axhline(y=l5, color="g", linewidth=1.0)
+# plt.axhline(y=ldrl, color="g", linewidth=1.0)
+# plt.text(
+#     55,
+#     l20,
+#     f"{l20}",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
+
+# plt.text(
+#     55,
+#     l5,
+#     f"{round(l5,2)}",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
+
+# plt.text(
+#     55,
+#     ldrl,
+#     f"{ldrl}",
+#     horizontalalignment="center",
+#     verticalalignment="center",
+#     rotation=0,
+#     fontsize=18,
+# )
 # plt.title("Stability")
 plt.legend()
 plt.grid(True)
